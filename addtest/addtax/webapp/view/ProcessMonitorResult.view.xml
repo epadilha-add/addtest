@@ -1,0 +1,95 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.ProcessMonitorResult"
+	xmlns:table="sap.ui.table" xmlns:commons="sap.suite.ui.commons" xmlns:microchart="sap.suite.ui.microchart">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading >
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:actions>
+						<!--<Avatar src="sap-icon://feeder-arrow" backgroundColor="" class="sapUiTinyMarginEnd" press=".onListItemPress"/>-->
+						<Button type="Transparent" icon="sap-icon://notification-2" text="" tooltip="Logs da aplicação" press=".AddUtilities.onShowSysLog"/>
+					<ToolbarSpacer/>
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="ALV">
+				<uxap:ObjectPageSubSection title="{/TotalText}">
+					<table:Table id="table" selectionMode="MultiToggle" rows="{/Nodes2}" visibleRowCount="4" minAutoRowCount="5" columnResize=".onColumnResize"
+						ariaLabelledBy="title" sort="sortDeliveryDate">
+						<table:extension id="toolbar">
+							<!--	<OverflowToolbar id="toolbar" content="bt>/btn">-->
+							<OverflowToolbar id="toolbar">
+								<core:Fragment fragmentName="AddPlatform.view.fragment.btBasicProcess.processExecute" type="XML"/>
+								<ToolbarSpacer/>
+								<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+								<!--	<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed"/>-->
+								<Button tooltip="Group" icon="sap-icon://group-2" press=".onNavToMonitorLog"/>
+								<ToggleButton icon="sap-icon://menu" tooltip="Enable Custom Context Menu" press=".onShowLog"/>
+							</OverflowToolbar>
+						</table:extension>
+						<table:rowSettingsTemplate>
+							<table:RowSettings highlight="{Status}"/>
+						</table:rowSettingsTemplate>
+						<table:columns>
+							<!--				<table:Column sortProperty="Status" filterProperty="Status">
+								<Label text="Status"/>
+								<table:template>
+									<Text text="{Status}" wrapping="false"/>
+								</table:template>
+							</table:Column>-->
+							<table:Column width="5em" filterProperty="BUKRS" resizable="true" autoResizable="true" 	sortProperty="BUKRS">
+								<Label text="{i18n>BUKRS_text}"/>
+								<table:template>
+									<!--<Text text="{BUKRS}" wrapping="false"/>-->
+									<Text text="{path: 'BUKRS', formatter: '.formatter.formatBukrs'}" wrapping="false"/>
+									
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/PROCX}" filterProperty="PROCX" resizable="true" autoResizable="true" sortProperty="PROCX">
+								<Label text="{i18n>PROCX_text}"/>
+								<table:template>
+									<!--<Text text="{PROCX}" wrapping="false"/>-->
+									<Text text="{path: 'PROCX', formatter: '.formatter.formatProcx'}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/ATIVI}" filterProperty="ATIVI" resizable="true" autoResizable="true" sortProperty="PROCX">
+								<Label text="{i18n>ATIVI_text}"/>
+								<table:template>
+									<!--<Text text="{ATIVI}" wrapping="false"/>-->
+									<Text text="{ parts: [{path: 'ATIVI'}, {path: 'PROCX'} ], formatter: '.formatter.formatAtivi' }" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/STATU}" filterProperty="STATU" resizable="true" autoResizable="true" sortProperty="STATU">
+								<Label text="{i18n>STATU_text}"/>
+								<table:template>
+									<!--<Text text="{STATU}" wrapping="false"/>-->
+									<!--<Button text="{STATU}" type="Transparent" press=".onNavToMonitorLog"/>-->
+									<Button text="{ parts: [{path: 'STATU'}, {path: 'PROCX'} ], formatter: '.formatter.formatStatus' }" type="Transparent" press=".onNavToMonitorLog"/>
+									
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/QUANT}" filterProperty="QUANT" resizable="true" autoResizable="true" sortProperty="QUANT">
+								<Label text="{i18n>MASTER_PAGE_TOTAL_text}"/>
+								<table:template>
+									<Text text="{QUANT}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</uxap:ObjectPageSubSection>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

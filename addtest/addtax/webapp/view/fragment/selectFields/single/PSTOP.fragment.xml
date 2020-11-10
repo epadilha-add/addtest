@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>PSTOP_tooltip}" tooltip="{i18n>PSTOP_tooltip}" labelFor="PSTOP"/>
+	<CheckBox id="PSTOP" selected="false"/>
+</core:FragmentDefinition>

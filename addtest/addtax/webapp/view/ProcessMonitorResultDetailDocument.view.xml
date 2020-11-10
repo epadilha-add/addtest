@@ -1,0 +1,305 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.ProcessMonitorResultDetailDocument"
+	xmlns:table="sap.ui.table">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle >
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="00010: RD-e - Recebimento de documentos Eletrônicos" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="00010: RD-e - Recebimento de documentos Eletrônicos" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:actions>
+					<OverflowToolbarButton icon="sap-icon://edit" text="Modo edição" type="Emphasized" tooltip="Modo edição" press=".onNavToComplementDataEdit"/>
+					<OverflowToolbarButton icon="sap-icon://pending" text="Executar" type="Transparent" tooltip="Executar"/>
+					<OverflowToolbarButton icon="sap-icon://save" text="Salvar" type="Default" tooltip="Salvar"/>
+					<ToolbarSpacer/>
+					<OverflowToolbarButton icon="sap-icon://ui-notifications" text="Logs" type="Default" tooltip="Logs"/>
+					<OverflowToolbarButton icon="sap-icon://close-command-field" text="Primeiro" type="Emphasized" tooltip="Primeiro" press=".onNavToComplementData"/>
+					<OverflowToolbarButton icon="sap-icon://navigation-left-arrow" text="Voltar" type="Emphasized" tooltip="Voltar" press=".onNavToComplementData"/>
+					<OverflowToolbarButton icon="sap-icon://navigation-right-arrow" text="Avançar" type="Emphasized" tooltip="Avançar" press=".onNavToComplementData"/>
+					<OverflowToolbarButton icon="sap-icon://open-command-field" text="Último" type="Emphasized" tooltip="Último" press=".onNavToComplementData"/>
+					<!--				<OverflowToolbarButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>-->
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent >
+			<FlexBox wrap="Wrap">
+				<!--	<Avatar src="sap-icon://shipping-status" backgroundColor="" displaySize="M" class="sapUiTinyMarginEnd"/>-->
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<!--<ObjectStatus title="Processo" text="00010 - RD-e Recebimento de Documentos Eletrônicos"/>-->
+					<ObjectStatus title="Domíno" text="cteProc - Conhecimento de Transporte"/>
+					<ObjectStatus title="Dt.Prc" text="01.01.2020"/>
+					<ObjectStatus title="Hr.Prc" text="11:00:00"/>
+					<ObjectStatus title="Atividade" text="0100-Verificar Duplicidade"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<ObjectStatus title="Dt.Modificação" text="01.01.2020"/>
+					<ObjectStatus title="Hr.Modificação" text="13:00:00"/>
+					<ObjectStatus title="Us.Modificação" text="EVERTONAP"/>
+					<ObjectStatus title="Fone" text="11-984432289"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<ObjectStatus title="Status" text=" P0000 - Em processamento" state="Success" icon="sap-icon://accept"/>
+				</layout:VerticalLayout>
+			</FlexBox>
+			<!--<Button type="Back" press=".onNavBack"></Button>-->
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="main" title="Dados Básicos">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection>
+						<layout:VerticalLayout width="100%">
+							<Label text="Nº documento" labelFor="NFENUM"/>
+							<Input id="NFENUM" class="sapUiSmallMarginBottom" type="Text" placeholder="Nº documento" enabled="true" editable="true" value="231321"/>
+							<Label text="Dt.Documento" labelFor="DOCDAT"/>
+							<Input id="DOCDAT" class="sapUiSmallMarginBottom" type="Date" placeholder="Dt.Documento" enabled="true" editable="true" value="01/01/2020"/>
+							<Label text="Valor total" labelFor="NFTOT"/>
+							<Input id="NFTOT" class="sapUiSmallMarginBottom" type="Number" placeholder="Valor total" enabled="true" editable="true" value="1520.00"/>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout width="100%">
+							<Label text="Código de Verificação" labelFor="CODVE"/>
+							<Input id="CODVE" class="sapUiSmallMarginBottom" type="Text" placeholder="Código de Verificação" enabled="true" editable="true"
+								value="3511651651516515500015550000055555512313"/>
+							<Label text="Código Fiscal" labelFor="SERVTYPE"/>
+							<Input id="SERVTYPE" class="sapUiSmallMarginBottom" type="Text" placeholder="CFOP/LC116" enabled="true" editable="true" value="10.04"/>
+							<Label text="ID.Emisssor" labelFor="CNPJE"/>
+							<Input id="CNPJE" class="sapUiSmallMarginBottom" type="Text" placeholder="ID.Emisssor" enabled="true" editable="true"
+								value="00.000.000/0001-20"/>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout width="100%">
+							<Label text="Nome Emissor" labelFor="NOMEE"/>
+							<Input id="NOMEE" class="sapUiSmallMarginBottom" type="Text" placeholder="Nome Emissor" enabled="true" editable="true"
+								value="Ariosvalto Santos LTDA"/>
+							<Label text="ID.Emisssor" labelFor="CNPJD"/>
+							<Input id="CNPJD" class="sapUiSmallMarginBottom" type="Text" placeholder="ID.Emisssor" enabled="true" editable="true"
+								value="00.000.000/0001-20"/>
+							<Label text="Nome Destinatário" labelFor="NOMED"/>
+							<Input id="NOMED" class="sapUiSmallMarginBottom" type="Text" placeholder="Nome Emissor" enabled="true" editable="true"
+								value="Nome do cliente"/>
+						</layout:VerticalLayout>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Impostos">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Totais Impostos">
+						<table:Table id="tabtax" selectionMode="None" rows="{Impostos>/tax}" visibleRowCount="6" sort="sortDeliveryDate" ariaLabelledBy="title">
+							<table:columns>
+								<table:Column width="7em" id="TYPE" sortProperty="Imposto">
+									<Label text="Imposto"/>
+									<table:template>
+										<Text text="{Impostos>TYPE}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="TAX" sortProperty="Alíquota">
+									<Label text="Alíquota"/>
+									<table:template>
+										<Input value="{Impostos>TAX}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="BASE" sortProperty="Base">
+									<Label text="Base"/>
+									<table:template>
+										<Input value="{Impostos>BASE}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="VALUE" sortProperty="Valor">
+									<Label text="Valor"/>
+									<table:template>
+										<Input value="{Impostos>VALUE}"/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:Table>
+						<!--				<layout:VerticalLayout width="100%">
+							<Label text="Alíquota PIS" labelFor="ALPIS"/>
+							<Input id="ALPIS" class="sapUiSmallMarginBottom" type="Text" placeholder="PIS" enabled="true" editable="true" value="1,25"/>
+							<Label text="Alíquota COFINS" labelFor="VLCOF"/>
+							<Input id="ALCOF" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCOF" enabled="true" editable="true" value="0,00"/>
+							<Label text="Alíquota CSLL" labelFor="VLCSL"/>
+							<Input id="ALCSL" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCSL" enabled="true" editable="true" value="0.00"/>
+							<Label text="Alíquota IPI" labelFor="VLIPI"/>
+							<Input id="ALIPI" class="sapUiSmallMarginBottom" type="Text" placeholder="IPI" enabled="true" editable="true" value="0,00"/>
+							<Label text="Alíquota ISS" labelFor="VLISS"/>
+							<Input id="ALISS" class="sapUiSmallMarginBottom" type="Text" placeholder="ISS" enabled="true" editable="true" value="0,00"/>
+							<Label text="Alíquota ICMS" labelFor="VLICM"/>
+							<Input id="ALICMISS" class="sapUiSmallMarginBottom" type="Text" placeholder="ICMS" enabled="true" editable="true" value="0,00"/>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout width="100%">
+							<Label text="Base PIS" labelFor="BAPIS"/>
+							<Input id="BAPIS" class="sapUiSmallMarginBottom" type="Text" placeholder="PIS" enabled="true" editable="true" value="1,25"/>
+							<Label text="Base COFINS" labelFor="BACOF"/>
+							<Input id="BACOF" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCOF" enabled="true" editable="true" value="0,00"/>
+							<Label text="Base CSLL" labelFor="BACSL"/>
+							<Input id="BACSL" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCSL" enabled="true" editable="true" value="0.00"/>
+							<Label text="Base IPI" labelFor="BAIPI"/>
+							<Input id="BAIPI" class="sapUiSmallMarginBottom" type="Text" placeholder="IPI" enabled="true" editable="true" value="0,00"/>
+							<Label text="Base ISS" labelFor="BAISS"/>
+							<Input id="BAISS" class="sapUiSmallMarginBottom" type="Text" placeholder="ISS" enabled="true" editable="true" value="0,00"/>
+							<Label text="Base ICMS" labelFor="BAICM"/>
+							<Input id="BAICM" class="sapUiSmallMarginBottom" type="Text" placeholder="ICMS" enabled="true" editable="true" value="0,00"/>
+						</layout:VerticalLayout>
+						<layout:VerticalLayout width="100%">
+							<Label text="Valor PIS" labelFor="VLPIS"/>
+							<Input id="VLPIS" class="sapUiSmallMarginBottom" type="Text" placeholder="PIS" enabled="true" editable="true" value="1,25"/>
+							<Label text="Valor COFINS" labelFor="VLCOF"/>
+							<Input id="VLCOF" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCOF" enabled="true" editable="true" value="0,00"/>
+							<Label text="Valor CSLL" labelFor="VLCSL"/>
+							<Input id="VLCSL" class="sapUiSmallMarginBottom" type="Text" placeholder="VLCSL" enabled="true" editable="true" value="0.00"/>
+							<Label text="Valor IPI" labelFor="VLIPI"/>
+							<Input id="VLIPI" class="sapUiSmallMarginBottom" type="Text" placeholder="IPI" enabled="true" editable="true" value="0,00"/>
+							<Label text="Valor ISS" labelFor="VLISS"/>
+							<Input id="VLISS" class="sapUiSmallMarginBottom" type="Text" placeholder="ISS" enabled="true" editable="true" value="0,00"/>
+							<Label text="Valor ICMS" labelFor="VLICM"/>
+							<Input id="VLICM" class="sapUiSmallMarginBottom" type="Text" placeholder="ICMS" enabled="true" editable="true" value="0,00"/>
+						</layout:VerticalLayout>-->
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Dados Básicos" id="A">
+				<!--				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados do documento">
+						<form:SimpleForm editable="true" columnsM="2" columnsL="3" columnsXL="4">
+							<Label text="Nº documento" labelFor="NFENUM"/>
+							<Input id="NFENUM" class="sapUiSmallMarginBottom" type="Text" placeholder="Nº documento" enabled="true" editable="true" value="231321"/>
+							<Label text="Dt.Documento" labelFor="DOCDAT"/>
+							<Input id="DOCDAT" class="sapUiSmallMarginBottom" type="Date" placeholder="Dt.Documento" enabled="true" editable="true" value="01/01/2020"/>
+							<Label text="Valor total" labelFor="NFTOT"/>
+							<Input id="NFTOT" class="sapUiSmallMarginBottom" type="Number" placeholder="Valor total" enabled="true" editable="true" value="1520.00"/>
+							<Label text="Código Referência" labelFor="CODVE"/>
+							<Input id="CODVE" class="sapUiSmallMarginBottom" type="Text" placeholder="Código Referência" enabled="true" editable="true"
+								value="35116516515165155000155500000555555"/>
+						</form:SimpleForm>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>-->
+				<!--	<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados do Emissor">
+						<form:SimpleForm editable="true" columnsM="2" columnsL="3" columnsXL="4">
+							<form:content>
+								<Label text="ID.Emisssor" labelFor="CNPJE"/>
+								<Input id="CNPJE" class="sapUiSmallMarginBottom" type="Text" placeholder="ID.Emisssor" enabled="true" editable="true"
+									value="00.000.000/0001-20"/>
+								<Label text="Nome Emissor" labelFor="NOMEE"/>
+								<Input id="NOMEE" class="sapUiSmallMarginBottom" type="Text" placeholder="Nome Emissor" enabled="true" editable="true"
+									value="Ariosvalto Santos LTDA"/>
+							</form:content>
+						</form:SimpleForm>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>-->
+				<!--	<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados do Destinatário">
+						<form:SimpleForm editable="true" columnsM="2" columnsL="3" columnsXL="4">
+							<form:content>
+								<Label text="ID.Emisssor" labelFor="CNPJD"/>
+								<Input id="CNPJD" class="sapUiSmallMarginBottom" type="Text" placeholder="ID.Emisssor" enabled="true" editable="true"
+									value="00.000.000/0001-20"/>
+								<Label text="Nome Destinatário" labelFor="NOMED"/>
+								<Input id="NOMED" class="sapUiSmallMarginBottom" type="Text" placeholder="Nome Emissor" enabled="true" editable="true"
+									value="Nome do cliente"/>
+							</form:content>
+						</form:SimpleForm>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>-->
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="2">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Itens">
+						<uxap:blocks>
+							<table:Table id="table" selectionMode="MultiToggle" rows="{Pedidos>/itens}" visibleRowCount="3" sort="sortDeliveryDate"
+								ariaLabelledBy="title">
+								<table:extension></table:extension>
+								<table:columns>
+									<table:Column id="CHAVE" sortProperty="Chave de acesso transportada">
+										<Label text="Chave de acesso transportada"/>
+										<table:template>
+											<Input value="{Pedidos>CHAVE}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="IEBELN" sortProperty="Pedido de compra">
+										<Label text="Pedido de compra"/>
+										<table:template>
+											<Input value="{Pedidos>IEBELN}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="EBELP" sortProperty="item Pedido de Compra">
+										<Label text="item Pedido de Compra"/>
+										<table:template>
+											<Input value="{Pedidos>EBELP}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="LBLNI" sortProperty="Folha de registro">
+										<Label text="Folha de registro"/>
+										<table:template>
+											<Input value="{Pedidos>LBLNI}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="MENGE" sortProperty="Quantidade">
+										<Label text="Quantidade"/>
+										<table:template>
+											<Input value="{Pedidos>MENGE}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="VGBEL" sortProperty="Valor Total">
+										<Label text="Valor Total"/>
+										<table:template>
+											<Input value="{Pedidos>VGBEL}"/>
+										</table:template>
+									</table:Column>
+									<table:Column id="IVA" sortProperty="IVA">
+										<Label text="IVA"/>
+										<table:template>
+											<Input value="{Pedidos>IVA}"/>
+										</table:template>
+									</table:Column>
+								</table:columns>
+								<!--					<table:footer>
+									<OverflowToolbar id="infobar"></OverflowToolbar>
+								</table:footer>-->
+							</table:Table>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="Anexos">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Anexo 1">
+						<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true">
+							<FlexBox direction="Column" renderType="Div" class="sapUiSmallMargin">
+								<!--			<FlexBox>
+										<Button text="Correctly Displayed" press="onCorrectPathClick"/>
+										<Button text="Loading Error" press="onIncorrectPathClick"/>
+									</FlexBox>-->
+								<PDFViewer source="{/Source}" title="" height="{/Height}">
+									<layoutData>
+										<FlexItemData growFactor="1"/>
+									</layoutData>
+								</PDFViewer>
+							</FlexBox>
+						</ScrollContainer>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<!--	<uxap:ObjectPageSection title="4">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados do Processo">
+						<form:SimpleForm editable="true" columnsM="2" columnsL="3" columnsXL="4">
+							<form:content>
+								<Label text="Pedido de Compra" labelFor="EBELN"/>
+								<Input id="EBELN" class="sapUiSmallMarginBottom" type="Text" placeholder="Pedido de Compra" enabled="true" editable="true"
+									value="45000000000"/>
+							</form:content>
+						</form:SimpleForm>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>-->
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

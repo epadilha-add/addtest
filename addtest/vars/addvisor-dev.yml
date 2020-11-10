@@ -1,0 +1,4 @@
+subaccount: addvisor-dev
+memory: 256M
+disk_quota : 516M 
+instances : 2

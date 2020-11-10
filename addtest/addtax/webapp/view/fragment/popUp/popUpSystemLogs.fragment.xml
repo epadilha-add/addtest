@@ -1,0 +1,47 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Logs de processamentos" class="dialogStyle" xmlns:table="sap.ui.table" resizable="true" contentHeight="50%"
+		contentWidth="70%">
+		<content>
+			<table:Table rows="{SYSLOG>/}" visibleRowCount="6" minAutoRowCount="6" columnResize=".onColumnResize" ariaLabelledBy="title" >
+				<table:rowSettingsTemplate>
+					<table:RowSettings highlight="{SYSLOG>STATUSSTATE}"/>
+				</table:rowSettingsTemplate>
+				<table:columns>
+					<table:Column width="5em" sortProperty="Status" filterProperty="Status">
+						<Label text="Status"/>
+						<table:template>
+							<Text text="{SYSLOG>STATUS}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="DATE" resizable="true" autoResizable="true" >
+						<Label text="Data"/>
+						<table:template>
+							<Text text="{SYSLOG>DATE}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="TIME" resizable="true" autoResizable="true">
+						<Label text="Time"/>
+						<table:template>
+							<Text text="{SYSLOG>TIME}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="PAGE" resizable="true" autoResizable="true">
+						<Label text="Página"/>
+						<table:template>
+							<Text text="{SYSLOG>PAGE}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="MESSAGE" resizable="true" autoResizable="true">
+						<Label text="Mensagem"/>
+						<table:template>
+							<Text text="{SYSLOG>MESSAGE}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<Button text="OK" press=".AddUtilities.onCloseSysLogs"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

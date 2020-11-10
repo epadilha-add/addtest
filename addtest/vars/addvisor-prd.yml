@@ -1,0 +1,4 @@
+subaccount: addvisor-prd
+memory: 1024M
+disk_quota : 516M 
+instances : 2

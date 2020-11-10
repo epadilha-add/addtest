@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>BRANCH_text}" labelFor="BRANCH"/>
+	<MultiComboBox id="BRANCH" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish"
+		placeholder="{i18n>BRANCH_placeholder}" items="{ path: 'PARAM>/VIEWS/0200/0/0201', sorter: { path: 'BRANCH' } }">
+		<core:Item key="{PARAM>BRANCH}" text="{PARAM>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

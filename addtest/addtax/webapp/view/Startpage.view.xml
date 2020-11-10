@@ -1,0 +1,71 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.Startpage" xmlns:table="sap.ui.table"
+	xmlns:microchart="sap.suite.ui.microchart" width="100%">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true" headerContentPinnable="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle >
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<Avatar src="sap-icon://home" backgroundColor="Accent10" class="sapUiTinyMarginEnd"/>
+						<Title text="{i18n>ADD_TITLE}" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<Avatar src="sap-icon://home" backgroundColor="Accent10" class="sapUiTinyMarginEnd"/>
+						<Title text="{i18n>ADD_TITLE}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<!--	<uxap:actions>
+					<OverflowToolbarButton icon="sap-icon://pending" text="Executar" type="Transparent" tooltip="Executar"/>
+					<OverflowToolbarButton icon="sap-icon://activity-items" text="Logs" type="Default" tooltip="Logs"/>
+					<OverflowToolbarButton icon="sap-icon://close-command-field" text="Primeiro" type="Emphasized" tooltip="Primeiro"/>
+					<OverflowToolbarButton icon="sap-icon://navigation-left-arrow" text="Voltar" type="Emphasized" tooltip="Voltar"/>
+					<OverflowToolbarButton icon="sap-icon://navigation-right-arrow" text="Avançar" type="Emphasized" tooltip="Avançar"/>
+					<OverflowToolbarButton icon="sap-icon://open-command-field" text="Último" type="Emphasized" tooltip="Último"/>
+					<OverflowToolbarButton icon="sap-icon://show" text="show state" type="Emphasized" tooltip="show"/>
+					<OverflowToolbarButton icon="sap-icon://save" text="Salvar" type="Default" tooltip="Salvar"/>
+				</uxap:actions>-->
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent >
+			<!--	<FlexBox wrap="Wrap"></FlexBox>-->
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="A" title="Operação">
+				<uxap:ObjectPageSubSection title="Operação">
+						<FlexBox fitContainer="true" alignItems="Center">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Processos SAP" subheader="Monitor"
+						press=".onNavToProcessMonitor">
+						<TileContent unit="Hoje" footer="950">
+							<ImageContent src="sap-icon://process"/>
+						</TileContent>
+					</GenericTile>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Caixa de entrada" subheader="Documentos"
+						press=".onNavToInboxDocument">
+						<TileContent unit="Hoje" footer="1520">
+							<ImageContent src="sap-icon://inbox"/>
+						</TileContent>
+					</GenericTile>
+					</FlexBox>
+				</uxap:ObjectPageSubSection>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection id="B">
+				<uxap:ObjectPageSubSection title="Configurações Globais">
+					<FlexBox fitContainer="true" alignItems="Center">
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Status" subheader="Global" press="onNavToStatus">
+						<TileContent unit="" footer="">
+							<ImageContent src="sap-icon://order-status"/>
+						</TileContent>
+					</GenericTile>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Variantes" subheader="Geral" press=".onNavToVariants">
+						<TileContent unit="" footer="">
+							<ImageContent src="sap-icon://settings"/>
+						</TileContent>
+					</GenericTile>					
+						</FlexBox>
+				</uxap:ObjectPageSubSection>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

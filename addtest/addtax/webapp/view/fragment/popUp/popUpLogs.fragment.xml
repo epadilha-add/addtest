@@ -1,0 +1,72 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Logs de processamentos" class="dialogStyle" xmlns:table="sap.ui.table" resizable="true" contentHeight="50%"
+		contentWidth="70%">
+		<content>
+			<table:Table rows="{LOG>/}" visibleRowCount="20" minAutoRowCount="50" columnResize=".onColumnResize" ariaLabelledBy="title" >
+				<table:extension >
+					<OverflowToolbar >
+						<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+						<Button tooltip="Group" icon="sap-icon://group-2" press=".handleActionPressLog"/>
+						<ToggleButton icon="sap-icon://menu" tooltip="Enable Custom Context Menu" press=".onShowLog"/>
+					</OverflowToolbar>
+				</table:extension>
+				<table:rowSettingsTemplate>
+					<table:RowSettings highlight="{LOG>Status}"/>
+				</table:rowSettingsTemplate>
+				<table:columns>
+					<!--					<table:Column sortProperty="Status" filterProperty="Status">
+						<Label text="Status"/>
+						<table:template>
+							<Text text="{Status}" wrapping="false"/>
+						</table:template>
+					</table:Column>-->
+					<table:Column width="5em" filterProperty="NFENUM" resizable="true" autoResizable="true" >
+						<Label text="Nº Documento"/>
+						<table:template>
+							<Text text="{LOG>NFENUM}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="15em" filterProperty="IDEME" resizable="true" autoResizable="true">
+						<Label text="Status"/>
+						<table:template>
+							<Text text="{LOG>STATU}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="15em" filterProperty="ATIVI" resizable="true" autoResizable="true">
+						<Label text="Atividade"/>
+						<table:template>
+							<Text text="{LOG>ATIVI}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="PROCX" resizable="true" autoResizable="true">
+						<Label text="Processo SAP"/>
+						<table:template>
+							<Text text="{LOG>PROCX}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="5em" filterProperty="USMOD" resizable="true" autoResizable="true">
+						<Label text="Usuário Modificação"/>
+						<table:template>
+							<Text text="{LOG>USMOD}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6em" filterProperty="DTMOD" resizable="true" autoResizable="true">
+						<Label text="Data Modificação"/>
+						<table:template>
+							<Text text="{LOG>DTMOD}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+					<table:Column width="6em" filterProperty="HRMOD" resizable="true" autoResizable="true">
+						<Label text="Hora Modificação"/>
+						<table:template>
+							<Text text="{LOG>HRMOD}" wrapping="false"/>
+						</table:template>
+					</table:Column>
+				</table:columns>
+			</table:Table>
+		</content>
+		<buttons>
+			<Button text="OK" press="onButtonPress"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

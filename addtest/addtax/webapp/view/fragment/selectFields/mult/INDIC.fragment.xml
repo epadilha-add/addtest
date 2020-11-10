@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>INDIC_text}" labelFor="INDIC"/>
+	<MultiComboBox id="INDIC" selectionChange="handleSelectionChangeINDIC" selectionFinish="handleSelectionFinish"
+		placeholder="{i18n>INDIC_placeholder}" items="{ path: 'INDIC>/Nodes', sorter: { path: 'INDIC' } }">
+		<core:Item key="{INDIC>INDIC}" text="{INDIC>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

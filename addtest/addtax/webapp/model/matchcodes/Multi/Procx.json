@@ -1,0 +1,21 @@
+{
+	"Nodes": [{
+		"PROCX": "00010",
+		"DESCR": "00010: RD-e - Recebimento de documento"
+	}, {
+		"PROCX": "02000",
+		"DESCR": "02000 : CT-e - Pagamento de fretes"
+	}, {
+		"PROCX": "00035",
+		"DESCR": "00035 : NFSP - Download XML Prefitura de SP"
+	}, {
+		"PROCX": "01000",
+		"DESCR": "01000 : NF-e - Nota fiscal eletrônica - Mercantil"
+	}, {
+		"PROCX": "00055",
+		"DESCR": "00055 : NF-e - Download XML - Mercantil"
+	}, {
+		"PROCX": "00057",
+		"DESCR": "00057 : CT-e - Download XML - Frete"
+	}]
+}

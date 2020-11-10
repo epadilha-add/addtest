@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" id="01000">
+	<Label text="{i18n>PROCX_text}" labelFor="PROCX"/>
+	<MultiComboBox id="PROCX" selectionChange="handleSelectionChangePROCX" selectionFinish="handleSelectionFinish" required="true"
+		placeholder="{i18n>PROCX_placeholder}" selectedKeys="{FILTERS>/PROCX}" items="{ path: 'PARAM>/VIEWS/0100', sorter: { path: 'PROCX' } }">
+		<core:Item key="{PARAM>PROCX}" text="{PARAM>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

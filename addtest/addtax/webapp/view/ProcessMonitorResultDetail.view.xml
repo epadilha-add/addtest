@@ -1,0 +1,59 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.ProcessMonitorResultDetail"
+	xmlns:table="sap.ui.table" xmlns:commons="sap.suite.ui.commons">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle >
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+						<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+							<ObjectStatus title="Empresa" text="{path: 'PROCINFO>/BUKRS', formatter: '.formatter.formatBukrs'}"/>
+							<ObjectStatus title="Processo" text="{path: 'PROCINFO>/PROCX', formatter: '.formatter.formatProcx'}"/>
+							<ObjectStatus title="Status" text="{ parts: [{path: 'PROCINFO>/STATU'}, {path: 'PROCX'} ], formatter: '.formatter.formatStatus' }" state="{path: 'PROCINFO>/STATUSTATE'}"/>
+						</layout:VerticalLayout>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:actions>
+						<!--<Avatar src="sap-icon://feeder-arrow" backgroundColor="" class="sapUiTinyMarginEnd" press=".onListItemPress"/>-->
+					<Button type="Transparent" icon="sap-icon://notification-2" text="" tooltip="Logs da aplicação" press=".AddUtilities.onShowSysLog"/>
+					<ToolbarSpacer/>
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent >
+			<FlexBox fitContainer="true" alignItems="Center">
+				<layout:VerticalLayout>
+					<commons:ProcessFlow id="processflow" scrollable="false" nodePress="onNodePress" nodes="{PF>/nodes}" lanes="{PF>/lanes}">
+						<commons:nodes>
+							<commons:ProcessFlowNode laneId="{PF>lane}" nodeId="{PF>id}" title="{PF>title}" titleAbbreviation="{PF>titleAbbreviation}"
+								children="{PF>children}" state="{PF>state}" stateText="{PF>stateText}" texts="{PF>texts}" focused="{PF>focused}" visible="true"/>
+						</commons:nodes>
+						<commons:lanes>
+							<commons:ProcessFlowLaneHeader laneId="{PF>id}" iconSrc="{PF>icon}" text="{PF>label}" position="{PF>position}"/>
+						</commons:lanes>
+					</commons:ProcessFlow>
+				</layout:VerticalLayout>
+			</FlexBox>
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="B" title="{/TotalText}">
+				<uxap:ObjectPageSubSection id="C">
+					<Panel id="idPnl" >
+						<FlexBox id="idFB"
+							alignItems="Center"
+							justifyContent="Start">
+						</FlexBox>
+					</Panel> 
+				</uxap:ObjectPageSubSection>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

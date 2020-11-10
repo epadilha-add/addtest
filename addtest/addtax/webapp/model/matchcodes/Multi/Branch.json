@@ -1,0 +1,9 @@
+{
+	"Nodes": [{
+		"BRANCH": "0001",
+		"DESCR": "0001: Local de negócio 1"
+	}, {
+		"BRANCH": "0002",	
+		"DESCR": "0001: Local de negócio 2"
+	}]
+}

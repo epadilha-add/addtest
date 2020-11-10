@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" id="02000">
+	<Panel>
+		<Label text="{i18n>VBELN_text}" tooltip="{i18n>VBELN_tooltip}"/>
+		<MultiInput id="VBELN" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedVBELN" placeholder="{i18n>VBELN_placeholder}"></MultiInput>
+		<Label text="{i18n>TKNUM_text}" tooltip="{i18n>TKNUM_tooltip}"/>
+		<MultiInput id="TKNUM" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedTKNUM" placeholder="{i18n>TKNUM_placeholder}"></MultiInput>
+	</Panel>
+</core:FragmentDefinition>

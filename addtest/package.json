@@ -1,0 +1,31 @@
+{
+    "name": "add-platform-ui5",
+    "version": "1.0.0",
+    "description": "",
+    "main": "node/server.js",
+    "scripts": {
+        "start": "node node/server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/addvisor/addtax.git"
+    },
+    "author": "Gabriel Santos",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/addvisor/addtax/issues"
+    },
+    "homepage": "https://github.com/addvisor/addtax/#readme",
+    "dependencies": {
+        "@sap/xsenv": "3.0.0",
+        "@sap/xssec": "3.0.10",
+        "axios": "^0.21.0",
+        "daemon": "^1.1.0",
+        "express": "^4.17.1",
+        "passport": "^0.4.1",
+        "sap-cf-axios": "^0.2.25"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.6"
+    }
+}

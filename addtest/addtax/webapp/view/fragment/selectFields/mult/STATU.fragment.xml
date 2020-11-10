@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>STATU_text}" labelFor="STATU"/>
+	<MultiComboBox id="STATU" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish"
+		placeholder="{i18n>STATU_placeholder}" items="{ path: 'PARAM>/VIEWS/0400/0/0112', sorter: { path: 'STATU' } }">
+		<core:Item key="{PARAM>STATU}" text="{PARAM>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

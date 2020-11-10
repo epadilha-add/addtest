@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar">
+	<Label text="{i18n>DTPRC_text}" labelFor="DTPRC"/>
+	<DateRangeSelection secondDateValue="{FILTERS>/ADDDATEDTPRC/HIGH}" dateValue="{FILTERS>/ADDDATEDTPRC/LOW}" id="DTPRC" change="handleChangeDTPRC" required="true"/>
+</core:FragmentDefinition>

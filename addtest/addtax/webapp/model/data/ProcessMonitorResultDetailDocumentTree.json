@@ -1,0 +1,31 @@
+{ "Nodes": [
+	{
+		"text": "Nota fiscal eletrônica nº 0020202",
+		"ref": "sap-icon://attachment-audio",
+		"nodes":
+[
+					{
+						"text": "Anexo 1: 00101010.pdf",
+						"ref": "sap-icon://attachment-html"
+					},{
+						"text": "Anexo 2: 00101010.pdf",
+						"ref": "sap-icon://attachment-html"
+					}
+				]
+	},
+		{
+		"text": "Nota fiscal eletrônica nº 0020203",
+		"ref": "sap-icon://attachment-audio",
+		"nodes":
+[
+					{
+						"text": "Anexo 1: 00101010.xml",
+						"ref": "sap-icon://attachment-html"
+					},{
+						"text": "Anexo 2: 00101010.txt",
+						"ref": "sap-icon://attachment-html"
+					}
+				]
+	}
+]
+}

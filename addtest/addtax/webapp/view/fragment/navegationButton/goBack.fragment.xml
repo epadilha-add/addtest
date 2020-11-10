@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<!--<Avatar src="sap-icon://nav-back" backgroundColor="Accent10" class="sapUiTinyMarginEnd" press=".onNavBack"/>-->
+	<Button icon="sap-icon://nav-back" class="sapUiTinyMarginEnd" press=".onNavBack" tooltip="Voltar" type="Transparent"/>
+</core:FragmentDefinition>

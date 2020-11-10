@@ -1,0 +1,262 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "AddPlatform",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{title}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"ach": "ach"
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"fullWidth": true,
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"config": {
+			"fullWidth": "true "
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_hcw",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "addtax.view.App",
+			"type": "XML"
+		},
+		"config": {
+			"fullWidth": "true "
+		},
+		"dependencies": {
+			"minUI5Version": "1.60.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.f": {},
+				"sap.ui.layout": {},
+				"sap.ui.commons": {},
+				"sap.suite.ui.microchart": {},
+				"sap.uxap": {},
+				"sap.ushell": {},
+				"sap.ui.table": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "AddPlatform.i18n.i18n_pt",
+					"supportedLocales": [
+						""
+					],
+					"fallbackLocale": ""
+				}
+			},
+			"Model": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/Table.json"
+			},
+			"processMonitorResultMaster": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessMonitorResultMaster.json"
+			},
+			"processMonitorResultDetail": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessMonitorResultDetail.json"
+			},
+			"processMonitorResultDetailDocument": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessMonitorResultDetailDocument.json"
+			},
+			"processMonitorResultDetailDocumentTree": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data/ProcessMonitorResultDetailDocumentTree.json"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "AddPlatform.view",
+				"controlId": "App",
+				"controlAggregation": "pages",
+				"transition": "slide",
+				"bypassed": {
+					"target": [
+						"startpage"
+					]
+				},
+				"sample": {
+					"stretch": true,
+					"files": [
+						"view/ProcessMonitorStart.view.xml",
+						"view/ProcessMonitorResult.view.xml",
+						"view/ProcessMonitorResultDetail.view.xml",
+						"model/data/ProcessMonitorResultDetail.json",
+						"manifest.json"
+					]
+				}
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "startpage"
+				},
+				{
+					"pattern": "processMonitorStart",
+					"name": "processMonitorStart",
+					"target": "processMonitorStart"
+				},
+				{
+					"pattern": "processMonitorResult",
+					"name": "processMonitorResult",
+					"target": "processMonitorResult"
+				},
+				{
+					"pattern": "processMonitorResultDetail",
+					"name": "processMonitorResultDetail",
+					"target": "processMonitorResultDetail"
+				},
+				{
+					"pattern": "processMonitorResultDetailDocument",
+					"name": "processMonitorResultDetailDocument",
+					"target": "processMonitorResultDetailDocument"
+				},
+				{
+					"pattern": "processMonitorResultDetailDocumentEdit",
+					"name": "processMonitorResultDetailDocumentEdit",
+					"target": "processMonitorResultDetailDocumentEdit"
+				},
+				{
+					"pattern": "procMonResDetailDocumentEditFromStart",
+					"name": "procMonResDetailDocumentEditFromStart",
+					"target": "processMonitorResultDetailDocumentEdit"
+				},
+				{
+					"pattern": "procMonResDetailDocumentEditFromResult",
+					"name": "procMonResDetailDocumentEditFromResult",
+					"target": "processMonitorResultDetailDocumentEdit"
+				},
+				{
+					"pattern": "backToProcessMonitorResultDetail",
+					"name": "backToProcessMonitorResultDetail",
+					"target": "processMonitorResultDetail"
+				},
+				{
+					"pattern": "backToProcessMonitorResult",
+					"name": "backToProcessMonitorResult",
+					"target": "processMonitorResult"
+				},
+				{
+					"pattern": "backToProcessMonitorStart",
+					"name": "backToProcessMonitorStart",
+					"target": "processMonitorStart"
+				},
+				{
+					"pattern": "backToStartPage",
+					"name": "backToStartPage",
+					"target": "startpage"
+				},
+				{
+					"pattern": "inboxDocumentStart",
+					"name": "inboxDocumentStart",
+					"target": "inboxDocumentStart"
+				},
+				{
+					"pattern": "inboxDocumentStartNext",
+					"name": "inboxDocumentStartNext",
+					"target": "inboxDocumentStartNext"
+				},
+				{
+					"pattern": "inboxDocumentResult",
+					"name": "inboxDocumentResult",
+					"target": "inboxDocumentResult"
+				},
+				{
+					"pattern": "variantsStart",
+					"name": "variantsStart",
+					"target": "variantsStart"
+				},
+				{
+					"pattern": "statusStart",
+					"name": "statusStart",
+					"target": "statusStart"
+				}
+			],
+			"targets": {
+				"startpage": {
+					"viewName": "Startpage",
+					"viewLevel": 0
+				},
+				"processMonitorStart": {
+					"viewName": "ProcessMonitorStart",
+					"viewLevel": 1
+				},
+				"processMonitorResult": {
+					"viewName": "ProcessMonitorResult",
+					"viewLevel": 1
+				},
+				"processMonitorResultDetail": {
+					"viewName": "ProcessMonitorResultDetail",
+					"viewLevel": 1
+				},
+				"processMonitorResultDetailDocument": {
+					"viewName": "ProcessMonitorResultDetailDocument",
+					"viewLevel": 1
+				},
+				"processMonitorResultDetailDocumentEdit": {
+					"viewName": "ProcessMonitorResultDetailDocumentEdit",
+					"viewLevel": 1
+				},
+				"inboxDocumentStart": {
+					"viewName": "InboxDocumentStart",
+					"viewLevel": 1
+				},
+				"inboxDocumentResult": {
+					"viewName": "InboxDocumentResult",
+					"viewLevel": 2
+				},
+				"variantsStart": {
+					"viewName": "Variants",
+					"viewLevel": 1
+				},
+				"statusStart": {
+					"viewName": "Status",
+					"viewLevel": 1
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "AddPlatform/webapp",
+		"_version": "1.1.0"
+	}
+}

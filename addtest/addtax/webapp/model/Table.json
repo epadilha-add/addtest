@@ -1,0 +1,22 @@
+{
+	"Table": [
+		{
+			"BUKRS": "0001",
+			"PROCX": "00035-NFSP",
+			"STATU": "P1000",
+			"QUANT": "1588"
+		},
+		{
+			"BUKRS": "0001",
+			"PROCX": "00010-Rd-e",
+			"STATU": "P1000",
+			"QUANT": "50"
+		},
+		{
+			"BUKRS": "0001",
+			"PROCX": "01000-Mercantil",
+			"STATU": "P0000",
+			"QUANT": "258"
+		}
+	]
+}

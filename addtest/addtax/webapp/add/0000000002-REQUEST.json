@@ -1,0 +1,28 @@
+{
+	"SCREEN": {
+		"S_BUKRS": [{
+			"SIGN": "I",
+			"OPTION": "EQ",
+			"LOW": "0050",
+			"HIGH": ""
+		}],
+		"S_DTPRC": [{
+			"SIGN": "I",
+			"OPTION": "LE",
+			"LOW": "20200814",
+			"HIGH": ""
+		}],
+		"S_PROCX": [{
+			"SIGN": "I",
+			"OPTION": "EQ",
+			"LOW": "00010",
+			"HIGH": ""
+		}]
+	},
+	"FIELDS": [{
+		"SIGN": "I",
+		"OPTION": "EQ",
+		"LOW": "STATU",
+		"HIGH": ""
+	}]
+}

@@ -1,0 +1,24 @@
+{
+	"INTERFACE": "0000000007",
+	"UNAME": "EPADILHA",
+	"SCREEN": [
+		{
+			"S_IDEME": [
+			{
+				"SIGN": "I",
+				"OPTION": "EQ",
+				"LOW": "093F7297D22F6EF23007AB978C4132415F83B8CF",
+				"HIGH": ""
+			}],
+			"S_INDOC": [
+			{
+				"SIGN": "I",
+				"OPTION": "EQ",
+				"LOW": "093F7297D22F6EF23007AB978C4132415F83B8CF",
+				"HIGH": ""
+			}]
+		}
+	],
+	"SPRAS": "PT",
+	"Test":"teste"
+}

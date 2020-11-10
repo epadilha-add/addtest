@@ -1,0 +1,54 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.InboxDocumentStart">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle >
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>IDEME_INBOX_SELEC_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>IDEME_INBOX_SELEC_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:actions >
+					<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.go" type="XML"/>
+					<ToolbarSpacer/>
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent ></uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection title="1">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="{i18n>SCR_BASIC_DATA}">
+						<uxap:blocks>
+							<form:SimpleForm editable="true">
+								<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.BUKRS" type="XML"/>
+								<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.DTPRC" type="XML"/>
+								<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.IDEME" type="XML"/>
+								<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.BRANCH" type="XML"/>
+								<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.DOMIN" type="XML"/>
+								
+								<Label text="{i18n>SENDE_text}" labelFor="SENDE"/>
+								<MultiInput id="SENDE" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedSENDE" placeholder="{i18n>SENDE_placeholder}"></MultiInput>
+								<Label text="{i18n>RECEI_text}" labelFor="RECEI"/>
+								<MultiInput id="RECEI" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedRECEI" placeholder="{i18n>RECEI_placeholder}"></MultiInput>
+								<Label text="{i18n>XBLNR_text}" labelFor="XBLNR"/>
+								<MultiInput id="XBLNR" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedXBLNR" placeholder="{i18n>XBLNR_placeholder}"></MultiInput>
+								<Label text="{i18n>ANULA_text}" tooltip="{i18n>ANULA_tooltip}" labelFor="ANULA"/>
+								<CheckBox id="ANULA" selected="false"/>
+								<Label text="{i18n>INPRO_tooltip}" tooltip="{i18n>INPRO_tooltip}" labelFor="INPRO"/>
+								<CheckBox id="INPRO" selected="false"/>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

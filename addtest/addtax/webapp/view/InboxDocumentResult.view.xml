@@ -1,0 +1,124 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" controllerName="AddPlatform.controller.InboxDocumentResult"
+	xmlns:table="sap.ui.table">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle >
+			<uxap:ObjectPageDynamicHeaderTitle >
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>IDEME_INBOX_SELEC_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>IDEME_INBOX_SELEC_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+		<!--	<FlexBox wrap="Wrap">
+				<layout:VerticalLayout class="sapUiSmallMarginBeginEnd">
+					<ObjectStatus title="Empresa" text="0001"/>
+					<ObjectStatus title="Processo" text="02000 - Ct-e: Conhecimento de Transporte"/>
+					<ObjectStatus title="Status" text="P0000 - Em Processo" state="Success"/>
+				</layout:VerticalLayout>
+			</FlexBox>-->
+		</uxap:headerContent>
+		<uxap:sections>
+			<uxap:ObjectPageSection id="A">
+				<uxap:ObjectPageSubSection title="TOTAL">
+					<table:Table id="table" selectionMode="MultiToggle" rows="{/ALV}" visibleRowCount="7" minAutoRowCount="5"
+						visibleRowCountMode="{/visibleRowCountMode}" columnResize=".onColumnResize" ariaLabelledBy="title">
+						<table:extension>
+							<OverflowToolbar>
+								<Button type="Transparent" icon="sap-icon://ui-notifications" text=""></Button>
+								<Button type="Transparent" icon="sap-icon://org-chart" text=""></Button>
+								<Button tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+								<Button tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed"/>
+								<Button tooltip="Group" icon="sap-icon://group-2" press="handleGroupButtonPressed"/>
+								<ToggleButton icon="sap-icon://menu" tooltip="Enable Custom Context Menu" press="onToggleContextMenu"/>
+							</OverflowToolbar>
+						</table:extension>
+						<table:columns>
+							<table:Column width="{ui>/widths/NFENUM}" filterProperty="NFENUM" resizable="true" autoResizable="true">
+								<Label text="Nº.Doc"/>
+								<table:template>
+									<Text text="{NFENUM}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/DOCDAT}" filterProperty="DOCDAT" resizable="true" autoResizable="true">
+								<Label text="Dt.Doc"/>
+								<table:template>
+									<Text text="{DOCDAT}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/NFTOT}" filterProperty="NFTOT" resizable="true" autoResizable="true">
+								<Label text="Total"/>
+								<table:template>
+									<Text text="{NFTOT}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/CNPJE}" filterProperty="CNPJE" resizable="true" autoResizable="true">
+								<Label text="ID.Emiss"/>
+								<table:template>
+									<Text text="{CNPJE}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/NOMEE}" filterProperty="NOMEE" resizable="true" autoResizable="true">
+								<Label text="N.Emiss"/>
+								<table:template>
+									<Text text="{NOMEE}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/CNPJD}" filterProperty="CNPJD" resizable="true" autoResizable="true">
+								<Label text="ID.Dest"/>
+								<table:template>
+									<Text text="{CNPJD}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/NOMED}" filterProperty="NOMED" resizable="true" autoResizable="true">
+								<Label text="N.Dest"/>
+								<table:template>
+									<Text text="{NOMED}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/DTPRC}" filterProperty="DTPRC" resizable="true" autoResizable="true">
+								<Label text="Dt.Prc"/>
+								<table:template>
+									<Text text="{DTPRC}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/HRPRC}" filterProperty="HRPRC" resizable="true" autoResizable="true">
+								<Label text="Hr.Prc"/>
+								<table:template>
+									<Text text="{HRPRC}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/DTMOD}" filterProperty="DTMOD" resizable="true" autoResizable="true">
+								<Label text="Dt.Mod"/>
+								<table:template>
+									<Text text="{DTMOD}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/HRMOD}" filterProperty="HRMOD" resizable="true" autoResizable="true">
+								<Label text="Hr.Mod"/>
+								<table:template>
+									<Text text="{HRMOD}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+							<table:Column width="{ui>/widths/IDEME}" filterProperty="IDEME" resizable="true" autoResizable="true">
+								<Label text="ID.Doc"/>
+								<table:template>
+									<Text text="{IDEME}" wrapping="false"/>
+								</table:template>
+							</table:Column>
+						</table:columns>
+					</table:Table>
+				</uxap:ObjectPageSubSection>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

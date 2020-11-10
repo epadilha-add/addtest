@@ -1,0 +1,22 @@
+{
+
+	"Process": {
+		"BUKRS": "0001",
+		"PROCX": "00010",
+		"STATU": "P0000-Processo finalizado",
+		"DOCDAT": "01-01-2020",
+		"CRETIM": "12:00:00",
+		"NFENUM": "1315",
+		"NFTOT": "1.000,00",
+		"CNPJE": "00.000.000/0000-00",
+		"NOMEE": "Ariosvaldo Santos LTDA",
+		"CNPJD": "00.000.000/0000-00",
+		"NOMED": "Braskem",
+		"DTPRC": "01-01-2020",
+		"HRPRC": "12:00:00",
+		"DTMOD": "01-01-2020",
+		"HRMOD": "12:00:00",
+		"USMOD": "01-01-2020",
+		"IDEME": "41dfqr13412341234123412fdqertrert"
+	}
+}

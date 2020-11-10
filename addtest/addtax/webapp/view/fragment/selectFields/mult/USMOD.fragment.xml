@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>USMOD_text}" labelFor="USMOD"/>
+	<MultiComboBox id="USMOD" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish"
+		placeholder="{i18n>USMOD_placeholder}" items="{ path: 'USMOD>/Nodes', sorter: { path: 'USMOD' } }">
+		<core:Item key="{USMOD>USMOD}" text="{USMOD>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

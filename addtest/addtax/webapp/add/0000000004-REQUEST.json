@@ -1,0 +1,27 @@
+{
+	"INTERFACE": "0000000004",
+	"SCREEN": [
+		{
+			"S_PROCX": [
+				{
+					"SIGN": "I",
+					"OPTION": "EQ",
+					"LOW": "03000"
+				}
+			]
+		},
+		"S_VARIA": [
+				{
+					"SIGN": "I",
+					"OPTION": "EQ",
+					"LOW": "LC116"
+				}
+		]		
+	],
+	"SELECT": {
+		"TABLE": "/ADD/TP0106",
+		"FIELDS": "*",
+		"WHERE": "VARIA IN S_VARIA AND PROCX IN S_PROCX"
+	},
+	"SPRAS": "PT"
+}

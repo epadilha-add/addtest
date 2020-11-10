@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Button type="Transparent" icon="sap-icon://refresh" text="" tooltip="Atualizar"/>
+	<Button type="Transparent" icon="sap-icon://pending" text="Executar Processo" tooltip=""/>
+	<Button type="Transparent" icon="sap-icon://cancel" text="Anular processo" tooltip="Anular processo"/>
+	<Button type="Transparent" icon="sap-icon://accounting-document-verification" text="Dados Complementares" press=".onNavToComplementData"/>
+</core:FragmentDefinition>

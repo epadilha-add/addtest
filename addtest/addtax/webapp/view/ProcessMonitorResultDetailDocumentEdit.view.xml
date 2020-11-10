@@ -1,0 +1,128 @@
+<mvc:view controllerName="AddPlatform.controller.ProcessMonitorResultDetailDocumentEdit" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout" xmlns:core="sap.ui.core" xmlns:table="sap.ui.table" xmlns:f="sap.ui.layout.form">
+	<!--<Page showHeader="true" showNavButton="true" navButtonPress="onNavBack" title="{path: 'Process>/PROCX', formatter: '.controllerFormatterTeste' }">-->
+	<Page id="ProcessMonitorResultDetailDocumentEdit" showHeader="true" showNavButton="true" navButtonPress="onNavBack" title="{path: 'Process>/PROCX', formatter: '.formatter.formatProcx' }">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+					<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+				</contentLeft>
+				<contentRight>
+					<OverflowToolbarButton icon="sap-icon://pending" text="Executar" type="Transparent" tooltip="Executar"/>
+					<OverflowToolbarButton icon="sap-icon://save" text="Salvar" type="Default" tooltip="Salvar" press=".onSaveItem"/>
+					<OverflowToolbarButton icon="sap-icon://ui-notifications" text="Logs" type="Default" tooltip="Logs" press=".onNavToMonitorLog"/>
+					<OverflowToolbarButton type="Transparent" icon="sap-icon://notification-2" text="" tooltip="Logs da aplicação" press=".AddUtilities.onShowSysLog"/>
+					<ToolbarSpacer/>
+					<OverflowToolbarButton icon="sap-icon://close-command-field" text="Primeiro" type="Accept" tooltip="Primeiro"
+						press=".onNavToFirstItem"/>
+					<OverflowToolbarButton icon="sap-icon://navigation-left-arrow" text="Voltar" type="Accept" tooltip="Voltar"
+						press=".onNavToPreviousItem"/>
+					<Input id="addInputIndex" width="{path:'PageIndex>/WIDTH'}" value="{path:'PageIndex>/CURRENTINDEX'}" type="Number"/>
+					<Text text="{PageIndex>/MAXVALUE}" />
+					<OverflowToolbarButton icon="sap-icon://navigation-right-arrow" text="Avançar" type="Accept" tooltip="Avançar"
+						press=".onNavToNextItem"/>
+					<OverflowToolbarButton icon="sap-icon://open-command-field" text="Último" type="Accept" tooltip="Último" press=".onNavToLastItem"/>	
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<subHeader>
+			<Bar>
+				<contentLeft>
+					<ObjectStatus title="Processo" text="{Process>/PROCX}"/>
+					<ObjectStatus title="Domínio" text="{Process>/DOMIN}"/>
+					<ObjectStatus title="Dt.Prc" text="{Process>/DTPRC}"/>
+					<ObjectStatus title="Hr.Prc" text="{Process>/HRPRC}"/>
+					<ObjectStatus title="Atividade" text="{Process>/ATIVI}"/>
+					<ObjectStatus title="Dt.Modificação" text="{Process>/DTMOD}"/>
+					<ObjectStatus title="Hr.Modificação" text="{Process>/HRMOD}"/>
+					<ObjectStatus title="Us.Modificação" text="{Process>/USMOD}"/>
+					<ObjectStatus title="Status" text="{ parts: [{path: 'Process>/STATU'}, {path: 'Process>/PROCX'} ], formatter: '.formatter.formatStatus' }" state="{parts: [{path: 'Process>/STATU'}, {path: 'Process>/PROCX'} ], formatter: '.formatter.formatStatusState' }"/>
+				</contentLeft>
+			</Bar>
+		</subHeader>
+		<!--<FlexBox>
+			<l:HorizontalLayout class="sapUiSmallMarginBeginEnd">
+								<ObjectStatus title="Domínio" text="{Process>/DOMIN}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Dt.Prc" text="{Process>/DTPRC}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Hr.Prc" text="{Process>/HRPRC}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Atividade" text="{Process>/ATIVI}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Dt.Modificação" text="{Process>/DTMOD}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Hr.Modificação" text="{Process>/HRMOD}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Us.Modificação" text="{Process>/USMOD}"/>
+								<ToolbarSpacer/>
+								<ObjectStatus title="Status" text="{Process>/STATU}" state="Success" icon="sap-icon://accept"/>
+			</l:HorizontalLayout>
+		</FlexBox>-->
+		<l:Splitter id="mainSplitter" height="100%" width="100%">
+			<IconTabBar id="idIconTabBarStretchContent" backgroundDesign="Transparent" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="DADOS BASICOS">
+						<ScrollContainer id="EditBasicData" height="100%" width="100%" horizontal="false" vertical="true" />
+					</IconTabFilter>
+					<IconTabFilter text="TOTAIS IMPOSTOS">
+						<table:Table id="tabtax" selectionMode="None" rows="{Impostos>/tax}" visibleRowCount="6" sort="sortDeliveryDate" ariaLabelledBy="title">
+							<table:columns>
+								<table:Column width="7em" id="TYPE" sortProperty="Imposto">
+									<Label text="Imposto"/>
+									<table:template>
+										<Text text="{Impostos>TYPE}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="TAX" sortProperty="Alíquota">
+									<Label text="Alíquota"/>
+									<table:template>
+										<Input value="{Impostos>TAX}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="BASE" sortProperty="Base">
+									<Label text="Base"/>
+									<table:template>
+										<Label text="{Impostos>BASE}"/>
+									</table:template>
+								</table:Column>
+								<table:Column id="VALUE" sortProperty="Valor">
+									<Label text="Valor"/>
+									<table:template>
+										<Input value="{Impostos>VALUE}"/>
+									</table:template>
+								</table:Column>
+							</table:columns>
+						</table:Table>
+					</IconTabFilter>
+					<IconTabFilter text="ITENS">
+						<Panel id="idPnl" >
+							<FlexBox id="idFB"
+								alignItems="Center"
+								justifyContent="Start">
+							</FlexBox>
+						</Panel>
+						<Tree id="Tree" items="{path: 'DOCUMENT>/TD0000' , parameters: { numberOfExpandedLevels: 2 }}" headerText="{Process>/DOMIN}">
+							<CustomTreeItem press=".onPressTreeItem" type="Active">
+								<FlexBox alignItems="Start" width="100%">
+									<items>
+										<core:Icon src="{DOCUMENT>REF}"  class="sapUiSmallMarginEnd"/>
+										<Text text="{DOCUMENT>NOME}">
+											<layoutData icon="{DOCUMENT>ref}">
+												<FlexItemData growFactor="3"/>
+											</layoutData>
+										</Text>
+									</items>
+								</FlexBox>
+							</CustomTreeItem>
+						</Tree>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+			<l:Splitter height="100%" width="100%">
+				<core:HTML id="idFrame" />
+			</l:Splitter>
+		</l:Splitter>
+	</Page>
+</mvc:view>

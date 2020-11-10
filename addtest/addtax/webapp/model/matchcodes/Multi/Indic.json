@@ -1,0 +1,15 @@
+{
+	"Nodes": [{
+		"INDIC": "00001",
+		"DESCR": "00001: Grupo 1"
+	}, {
+		"INDIC": "00002",	
+		"DESCR": "00002: Grupo 2"
+	},{
+		"INDIC": "00003",
+		"DESCR": "00003: Grupo 3"
+	}, {
+		"INDIC": "00004",	
+		"DESCR": "00004: Grupo 4"
+	}]
+}

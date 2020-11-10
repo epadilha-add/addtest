@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>DOMIN_text}" labelFor="DOMIN"/>
+	<MultiInput id="DOMIN" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedDOMIN" placeholder="{i18n>DOMIN_placeholder}"></MultiInput>
+</core:FragmentDefinition>

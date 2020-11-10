@@ -1,0 +1,317 @@
+{   
+	"INTERFACE":"",
+	"SCREEN": {
+		"S_BUKRS": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DTPRC": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_PROCX": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_BRANCH": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_STATU": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_INDIC": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_USMOD": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DTMOD": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_FNSH": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_STOP": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_NFENUM": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DOCDAT": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_CODVE": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_XBLNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_CNPJE": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_CNPJD": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_IDEME": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_INDOC": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DOMIN": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_SENDE": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_XBLND": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DTENV": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_RECEI": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_EKORG": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_EKGRP": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_EBELN": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_LBLNI": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_NRNFE": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_ATIVO": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_STATP": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_CODE": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_BELNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_GJAHR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_CFOP": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DOCNUM": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_MBLNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_MJAHR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_VBELN": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_BELNF": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DOKNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DEV_MBLNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DEV_MJAHR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DEV_VBELN": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DEV_BELNR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_DEV_GJAHR": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_VBELN_VA": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_VBELN_VF": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_VBELN_VL": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}],
+		"S_ATIVI": [{
+			"SIGN": "",
+			"OPTION": "",
+			"LOW": "",
+			"HIGH": ""
+		}]
+	},
+	"VIEWS": {
+		"0100": "X", 
+		"0102": "X",
+		"0200": "X",
+		"0201": "X",
+		"0400": "X",
+		"0401": "X",
+		"0402": "X",
+		"0403": "X",
+		"0112": "X",
+		"0113": "",
+		"0600": "",
+		"0104": "",
+		"0105": "",
+		"0108": ""
+	},
+	"SPRAS": "PT",
+	"UNAME": "EPADILHA"
+}

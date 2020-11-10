@@ -1,0 +1,142 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:uxap="sap.uxap" xmlns:f="sap.f" xmlns:form="sap.ui.layout.form"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" controllerName="AddPlatform.controller.ProcessMonitorStart">
+	<uxap:ObjectPageLayout id="ObjectPageLayout" alwaysShowContentHeader="true" showFooter="true">
+		<uxap:headerTitle>
+			<uxap:ObjectPageDynamicHeaderTitle>
+				<uxap:expandedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:expandedHeading>
+				<uxap:snappedHeading>
+					<FlexBox fitContainer="true" alignItems="Center">
+						<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+						<Title text="{i18n>PROCX_SELECT_text}" wrapping="true"/>
+					</FlexBox>
+				</uxap:snappedHeading>
+				<uxap:actions>
+					<Button type="Transparent" icon="sap-icon://pending" text="Executar Processo" tooltip="Executar" press=".onExecuteProcess"/>
+					<!--<Button type="Transparent" icon="sap-icon://cancel" text="" tooltip="Anular processo"/>-->
+					<Button type="Transparent" icon="sap-icon://accounting-document-verification" text="Dados Complementares" press=".onNavToComplementData"/>
+					
+					<ToolbarSpacer/>
+					<Button type="Transparent" icon="sap-icon://notification-2" text="" tooltip="Logs da aplicação" press=".AddUtilities.onShowSysLog"/>
+					<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.go" type="XML"/>
+					
+				</uxap:actions>
+			</uxap:ObjectPageDynamicHeaderTitle>
+		</uxap:headerTitle>
+		<uxap:headerContent>
+			<!--		<Button type="Transparent" icon="sap-icon://pending" text="Executar Processo" tooltip=""/>
+			<Button type="Transparent" icon="sap-icon://cancel" text="Anular processo" tooltip="Anular processo"/>
+			<Button type="Transparent" icon="sap-icon://accounting-document-verification" text="Dados Complementares" press=".onNavToComplementData"/>-->
+		</uxap:headerContent>
+		<uxap:sections >
+			<uxap:ObjectPageSection title="1">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="{i18n>SCR_BASIC_DATA}" id="A">
+						<uxap:actions>
+							<Button icon="sap-icon://save" type="Transparent" press="onSaveFilterVariantPress" tooltip="Gravar variante temporária"/>
+								<Button icon="sap-icon://customize" type="Transparent" press="onLoadFilterVariantPress" tooltip="Buscar variante temporária"/>
+						</uxap:actions>
+						<uxap:blocks>
+							<form:SimpleForm editable="true">
+								<core:Fragment fragmentName="AddPlatform.view.fragment.screens.basicDataProcess" type="XML"/>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="2">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados do documento" id="B">
+						<uxap:blocks >
+							<form:SimpleForm editable="true">
+								<Label text="{i18n>NFENUM_text}" labelFor="NFENUM"/>
+								<MultiInput id="NFENUM" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedBRANCH" placeholder="{i18n>NFENUM_placeholder}"></MultiInput>
+								<Label text="{i18n>CODVE_text}" labelFor="CODVE"/>
+								<MultiInput id="CODVE" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedCODVE" placeholder="{i18n>CODVE_placeholder}"></MultiInput>
+								<Label text="{i18n>XBLNR_text}" labelFor="XBLNR"/>
+								<MultiInput id="XBLNR" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedXBLNR" placeholder="{i18n>XBLNR_placeholder}"></MultiInput>
+								<Label text="{i18n>CNPJE_text}" labelFor="CNPJE"/>
+								<MultiInput id="CNPJE" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedCNPJE" placeholder="{i18n>CNPJE_placeholder}"></MultiInput>
+								<Label text="{i18n>CNPJD_text}" labelFor="CNPJD"/>
+								<MultiInput id="CNPJD" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedCNPJD" placeholder="{i18n>CNPJD_placeholder}"></MultiInput>
+								<Label text="{i18n>DOCDAT_text}" tooltip="{i18n>DOCDAT_tooltip}"/>
+								<DateRangeSelection id="DOCDAT" change="handleChange"/>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="3">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="Dados de entrada">
+						<uxap:blocks>
+							<form:SimpleForm editable="true">
+								<Label text="{i18n>IDEME_text}" tooltip="{i18n>IDEME_tooltip}"/>
+								<Input id="IDEME" value="{FILTERS>/IDEME}" />
+								<!--<MaskInput id="IDEME" value="{IDEME}" mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="{i18n>IDEME_placeholder}">
+									<rules>
+										<MaskInputRule/>
+									</rules>
+								</MaskInput>-->
+								<Label text="{i18n>INDOC_text}" tooltip="{i18n>INDOC_tooltip}"/>
+								<Input id="INDOC" value="{FILTERS>/INDOC}" valueLiveUpdate="true" />
+								<!--<MaskInput id="INDOC" value="{INDOC}" mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="{i18n>INDOC_placeholder}">
+									<rules>
+										<MaskInputRule/>
+									</rules>
+								</MaskInput>-->
+								<Label text="{i18n>DOMIN_text}" tooltip="{i18n>DOMIN_tooltip}"/>
+								<Input id="DOMIN" value="{FILTERS>/DOMIN}" />
+								<!--<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="{i18n>DOMIN_placeholder}">
+									<rules>
+										<MaskInputRule/>
+									</rules>
+								</MaskInput>-->
+								<Label text="{i18n>SENDE_text}" tooltip="{i18n>SENDE_tooltip}"/>
+								<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="{i18n>SENDE_placeholder}">
+									<rules>
+										<MaskInputRule/>
+									</rules>
+								</MaskInput>
+								<Label text="{i18n>RECEI_text}" tooltip="{i18n>RECEI_tooltip}"/>
+								<MaskInput mask="~~~~~~~~~~" placeholderSymbol="_" placeholder="{i18n>RECEI_placeholder}">
+									<rules>
+										<MaskInputRule/>
+									</rules>
+								</MaskInput>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+			<uxap:ObjectPageSection title="{i18n>DOC_DATA_title}">
+				<uxap:subSections>
+					<uxap:ObjectPageSubSection title="{i18n>DOC_DATA_title}" id="DOC_DATA_first">
+						<uxap:blocks>
+							<form:SimpleForm editable="true" id="idPage" visible="true">
+								<!--	<Label text="{i18n>EBELN_text}" tooltip="{i18n>EBELN_tooltip}"/>
+								<MultiInput id="EBELN" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedEBELN" placeholder="{i18n>EBELN_placeholder}"></MultiInput>
+								<Label text="{i18n>MBLNR_text}" tooltip="{i18n>MBLNR_tooltip}"/>
+								<MultiInput id="MBLNR" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedMBLNR" placeholder="{i18n>MBLNR_placeholder}"></MultiInput>-->
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>
+					<!--	<uxap:ObjectPageSubSection title="{i18n>DOC_DATA_SECOND_title}" id="DOC_DATA_second">
+						<uxap:blocks>
+							<form:SimpleForm editable="true">
+								<Label text="{i18n>VBELN_text}" tooltip="{i18n>VBELN_tooltip}"/>
+								<MultiInput id="VBELN" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedVBELN" placeholder="{i18n>VBELN_placeholder}"></MultiInput>
+								<Label text="{i18n>TKNUM_text}" tooltip="{i18n>TKNUM_tooltip}"/>
+								<MultiInput id="TKNUM" valueHelpOnly="true" valueHelpRequest=".onValueHelpRequestedTKNUM" placeholder="{i18n>TKNUM_placeholder}"></MultiInput>
+							</form:SimpleForm>
+						</uxap:blocks>
+					</uxap:ObjectPageSubSection>-->
+				</uxap:subSections>
+			</uxap:ObjectPageSection>
+		</uxap:sections>
+	</uxap:ObjectPageLayout>
+</mvc:View>

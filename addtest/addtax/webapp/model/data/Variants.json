@@ -1,0 +1,354 @@
+{
+	"0105": [
+		{
+			"CONFIG": {
+				"INSER": "",
+				"MODIF": "",
+				"DELET": ""
+			},
+			"STRUC": [
+				{
+					"COL_POS": 1,
+					"FIELDNAME": "PROCX",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000001",
+					"SCRTEXT_L": "Ativo",
+					"SCRTEXT_M": "Ativo",
+					"SCRTEXT_S": "Ativo"
+				},
+				{
+					"COL_POS": 2,
+					"FIELDNAME": "VARIA",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000132",
+					"SCRTEXT_L": "Descrição",
+					"SCRTEXT_M": "Processo",
+					"SCRTEXT_S": "Desc"
+				},
+				{
+					"COL_POS": 3,
+					"FIELDNAME": "DESCR",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000132",
+					"SCRTEXT_L": "LC116 - Lei complementar",
+					"SCRTEXT_M": "LC116",
+					"SCRTEXT_S": "LC116"
+				}
+			],
+			"ALV": {
+				"PROCX": "03000",
+				"VARIA": "LC116",
+				"DESCR": "LC116 - Lei Complementar"
+			},
+			"0106": {
+				"CONFIG": {
+					"INSER": "X",
+					"MODIF": "X",
+					"DELET": "X"
+				},
+				"STRUC": [
+					{
+						"COL_POS": 3,
+						"FIELDNAME": "ATIVO",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000001",
+						"SCRTEXT_L": "Ativo",
+						"SCRTEXT_M": "Ativo",
+						"SCRTEXT_S": "Ativo"
+					},
+					{
+						"COL_POS": 2,
+						"FIELDNAME": "DESCR",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000132",
+						"SCRTEXT_L": "Descrição",
+						"SCRTEXT_M": "Processo",
+						"SCRTEXT_S": "Desc"
+					},
+					{
+						"COL_POS": 1,
+						"FIELDNAME": "PARAM",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000020",
+						"SCRTEXT_L": "LC116 - Lei complementar",
+						"SCRTEXT_M": "LC116",
+						"SCRTEXT_S": "LC116"
+					},
+					{
+						"COL_POS": 4,
+						"FIELDNAME": "USMOD",
+						"SCRTEXT_L": "Usuário modificação",
+						"SCRTEXT_M": "UsMod",
+						"SCRTEXT_S": "UsMod"
+					},
+					{
+						"COL_POS": 5,
+						"FIELDNAME": "DTMOD",
+						"SCRTEXT_L": "Dt modificação",
+						"SCRTEXT_M": "DtMod",
+						"SCRTEXT_S": "DtMod"
+					},
+					{
+						"COL_POS": 6,
+						"FIELDNAME": "HRMOD",
+						"SCRTEXT_L": "Hr modificação",
+						"SCRTEXT_M": "HrMod",
+						"SCRTEXT_S": "HrMod"
+					}
+				],
+				"ALV": [
+					{
+						"PARAM": "01.01",
+						"DESCR": "Análise e desenvolvimento de sistemas",
+						"ATIVO": "X",
+						"USMOD": "EPADILHA",
+						"DTMOD": "20200528",
+						"HRMOD": "140000",
+						"0107": {
+							"CONFIG": {
+								"INSER": "X",
+								"MODIF": "X",
+								"DELET": "X"
+							},
+							"STRUC": [
+								{
+									"COL_POS": 1,
+									"FIELDNAME": "VPARA",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000020",
+									"SCRTEXT_L": "Ativo",
+									"SCRTEXT_M": "Ativo",
+									"SCRTEXT_S": "Ativo"
+								},
+								{
+									"COL_POS": 2,
+									"FIELDNAME": "VALUE",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000132",
+									"SCRTEXT_L": "Descrição",
+									"SCRTEXT_M": "Processo",
+									"SCRTEXT_S": "Desc"
+								},
+								{
+									"COL_POS": 3,
+									"FIELDNAME": "ATIVO",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000001",
+									"SCRTEXT_L": "Ativo",
+									"SCRTEXT_M": "Ativo",
+									"SCRTEXT_S": "Ativo"
+								},
+								{
+									"COL_POS": 4,
+									"FIELDNAME": "USMOD",
+									"SCRTEXT_L": "Usuário modificação",
+									"SCRTEXT_M": "UsMod",
+									"SCRTEXT_S": "UsMod"
+								},
+								{
+									"COL_POS": 5,
+									"FIELDNAME": "DTMOD",
+									"SCRTEXT_L": "Dt modificação",
+									"SCRTEXT_M": "DtMod",
+									"SCRTEXT_S": "DtMod"
+								},
+								{
+									"COL_POS": 6,
+									"FIELDNAME": "HRMOD",
+									"SCRTEXT_L": "Hr modificação",
+									"SCRTEXT_M": "HrMod",
+									"SCRTEXT_S": "HrMod"
+								}
+							],
+							"ALV": [
+								{
+									"VPARA": "SP 35020202",
+									"VALUE": "49.10",
+									"ATIVO": "X",
+									"USMOD": "EPADILHA",
+									"DTMOD": "20200528",
+									"HRMOD": "140000"
+								}
+							]
+						}
+					}
+				]
+			}
+		},
+		{
+			"CONFIG": {
+				"INSER": "",
+				"MODIF": "",
+				"DELET": ""
+			},
+			"STRUC": [
+				{
+					"COL_POS": 1,
+					"FIELDNAME": "PROCX",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000001",
+					"SCRTEXT_L": "Ativo",
+					"SCRTEXT_M": "Ativo",
+					"SCRTEXT_S": "Ativo"
+				},
+				{
+					"COL_POS": 2,
+					"FIELDNAME": "VARIA",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000132",
+					"SCRTEXT_L": "Descrição",
+					"SCRTEXT_M": "Processo",
+					"SCRTEXT_S": "Desc"
+				},
+				{
+					"COL_POS": 3,
+					"FIELDNAME": "DESCR",
+					"DATATYPE": "CHAR",
+					"INTLEN": "000132",
+					"SCRTEXT_L": "LC116 - Lei complementar",
+					"SCRTEXT_M": "LC116",
+					"SCRTEXT_S": "LC116"
+				}
+			],
+			"ALV": {
+				"PROCX": "00010",
+				"VARIA": "000000001",
+				"DESCR": "Configurações Gerais"
+			},
+			"0106": {
+				"CONFIG": {
+					"INSER": "X",
+					"MODIF": "X",
+					"DELET": "X"
+				},
+				"STRUC": [
+					{
+						"COL_POS": 3,
+						"FIELDNAME": "ATIVO",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000001",
+						"SCRTEXT_L": "Ativo",
+						"SCRTEXT_M": "Ativo",
+						"SCRTEXT_S": "Ativo"
+					},
+					{
+						"COL_POS": 2,
+						"FIELDNAME": "DESCR",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000132",
+						"SCRTEXT_L": "Descrição",
+						"SCRTEXT_M": "Processo",
+						"SCRTEXT_S": "Desc"
+					},
+					{
+						"COL_POS": 1,
+						"FIELDNAME": "PARAM",
+						"DATATYPE": "CHAR",
+						"INTLEN": "000020",
+						"SCRTEXT_L": "LC116 - Lei complementar",
+						"SCRTEXT_M": "LC116",
+						"SCRTEXT_S": "LC116"
+					},
+					{
+						"COL_POS": 4,
+						"FIELDNAME": "USMOD",
+						"SCRTEXT_L": "Usuário modificação",
+						"SCRTEXT_M": "UsMod",
+						"SCRTEXT_S": "UsMod"
+					},
+					{
+						"COL_POS": 5,
+						"FIELDNAME": "DTMOD",
+						"SCRTEXT_L": "Dt modificação",
+						"SCRTEXT_M": "DtMod",
+						"SCRTEXT_S": "DtMod"
+					},
+					{
+						"COL_POS": 6,
+						"FIELDNAME": "HRMOD",
+						"SCRTEXT_L": "Hr modificação",
+						"SCRTEXT_M": "HrMod",
+						"SCRTEXT_S": "HrMod"
+					}
+				],
+				"ALV": [
+					{
+						"PARAM": "01.01",
+						"DESCR": "Análise e desenvolvimento de sistemas",
+						"ATIVO": "X",
+						"USMOD": "EPADILHA",
+						"DTMOD": "20200528",
+						"HRMOD": "140000",
+						"0107": {
+							"CONFIG": {
+								"INSER": "X",
+								"MODIF": "X",
+								"DELET": "X"
+							},
+							"STRUC": [
+								{
+									"COL_POS": 1,
+									"FIELDNAME": "VPARA",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000020",
+									"SCRTEXT_L": "Ativo",
+									"SCRTEXT_M": "Ativo",
+									"SCRTEXT_S": "Ativo"
+								},
+								{
+									"COL_POS": 2,
+									"FIELDNAME": "VALUE",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000132",
+									"SCRTEXT_L": "Descrição",
+									"SCRTEXT_M": "Processo",
+									"SCRTEXT_S": "Desc"
+								},
+								{
+									"COL_POS": 3,
+									"FIELDNAME": "ATIVO",
+									"DATATYPE": "CHAR",
+									"INTLEN": "000001",
+									"SCRTEXT_L": "Ativo",
+									"SCRTEXT_M": "Ativo",
+									"SCRTEXT_S": "Ativo"
+								},
+								{
+									"COL_POS": 4,
+									"FIELDNAME": "USMOD",
+									"SCRTEXT_L": "Usuário modificação",
+									"SCRTEXT_M": "UsMod",
+									"SCRTEXT_S": "UsMod"
+								},
+								{
+									"COL_POS": 5,
+									"FIELDNAME": "DTMOD",
+									"SCRTEXT_L": "Dt modificação",
+									"SCRTEXT_M": "DtMod",
+									"SCRTEXT_S": "DtMod"
+								},
+								{
+									"COL_POS": 6,
+									"FIELDNAME": "HRMOD",
+									"SCRTEXT_L": "Hr modificação",
+									"SCRTEXT_M": "HrMod",
+									"SCRTEXT_S": "HrMod"
+								}
+							],
+							"ALV": [
+								{
+									"VPARA": "SP 35020202",
+									"VALUE": "49.10",
+									"ATIVO": "X",
+									"USMOD": "EPADILHA",
+									"DTMOD": "20200528",
+									"HRMOD": "140000"
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	]
+}

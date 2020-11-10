@@ -1,0 +1,9 @@
+{
+	"Nodes": [{
+		"BUKRS": "0001",
+		"DESCR": "0001: Empresa 1"
+	}, {
+		"BUKRS": "0002",	
+		"DESCR": "0002: Empresa 2"
+	}]
+}

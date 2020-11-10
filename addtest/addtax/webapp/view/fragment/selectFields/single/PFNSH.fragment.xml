@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>PFNSH_text}" tooltip="{i18n>PFNSH_tooltip}" labelFor="PFNSH"/>
+	<CheckBox id="PFNSH" selected="false"/>
+</core:FragmentDefinition>

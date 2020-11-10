@@ -1,0 +1,17 @@
+<mvc:View controllerName="AddPlatform.controller.Status" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core"
+	xmlns="sap.m" height="100%" xmlns:table="sap.ui.table">
+	<Page id="IdPage">
+		<headerContent>
+			<core:Fragment fragmentName="AddPlatform.view.fragment.navegationButton.goBack" type="XML"/>
+			<core:Icon src="sap-icon://order-status"></core:Icon>
+			<Title text="{i18n>ADD_TITLE_STATUS}"/>
+			<ToolbarSpacer/>
+		</headerContent>
+		<Panel>
+			<ComboBox change="handleChangePROCX" items="{ path: 'PROCX>/ALV' }" id="IdPROCX" width="350px">
+				<core:Item key="{PROCX>PROCX}" text="{PROCX>PROCX} : {PROCX>DESCR}"/>
+			</ComboBox>
+		</Panel>
+		<Panel id="IdSTATUS"></Panel>
+	</Page>
+</mvc:View>

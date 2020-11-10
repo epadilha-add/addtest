@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+<!--	<Avatar src="sap-icon://feeder-arrow" backgroundColor="Accent10" class="sapUiTinyMarginEnd" press=".onNavToGo" />-->
+	<Button icon="sap-icon://feeder-arrow" class="sapUiTinyMarginEnd" press=".onNavToGo" type="Transparent"/>
+</core:FragmentDefinition>

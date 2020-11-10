@@ -1,0 +1,48 @@
+{
+	"0100": [{
+		"PROCX": "00010",
+		"DESCR": "RD-e: Recebimento de documentos"
+	}, {
+		"PROCX": "00035",
+		"DESCR": "NFSP: Download Prefeitua de SP"
+	}, {
+		"PROCX": "01000",
+		"DESCR": "NF-e: Nota Fiscal Eletrônica Mercantil"
+	}, {
+		"PROCX": "02000",
+		"DESCR": "CT-e: Frete Oubound"
+	}],
+
+	"0200": [{
+		"BUKRS": "0001",
+		"DESCR": "Empresa 1",
+		"0201": [{
+			"BRANCH": "0001",
+			"DESCR": "Local de negócio 1",
+			"0202": [{
+				"PROCX": "00010",
+				"DESCR": "Local de negócio 1"
+			}, {
+				"PROCX": "00035",
+				"DESCR": "Download Prefeitua de SP"
+			}]
+		}, {
+			"BRANCH": "0002",
+			"DESCR": "Local de negócio 2"
+		}]
+	}, {
+		"BUKRS": "0002",
+		"DESCR": "Empresa 2",
+		"0201": [{
+			"BRANCH": "0004",
+			"DESCR": "Local de negócio 4"
+		}, {
+			"BRANCH": "0005",
+			"DESCR": "Local de negócio 5"
+		}, {
+			"BRANCH": "0006",
+			"DESCR": "Local de negócio 6"
+		}]
+	}]
+
+}

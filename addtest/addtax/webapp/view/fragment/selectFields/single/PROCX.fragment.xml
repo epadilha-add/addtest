@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>PROCX_text}" labelFor="PROCX"/>
+	<ComboBox items="{ path: 'PROCX>/Nodes', sorter: { path: 'PROCX' } }" placeholder="{i18n>PROCX_placeholder}" required="true">
+		<core:Item key="{PROCX>PROCX}" text="{PROCX>DESCR}"/>
+	</ComboBox>
+</core:FragmentDefinition>

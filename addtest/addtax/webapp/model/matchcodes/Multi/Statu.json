@@ -1,0 +1,21 @@
+{
+	"Nodes": [{
+		"STATU": "P0000",
+		"DESCR": "P0000: Em processo"
+	}, {
+		"STATU": "P1000",	
+		"DESCR": "P1000: Processo finalizado"
+	},{
+		"STATU": "A0000",
+		"DESCR": "A0000: Preenchimento incompleto"
+	}, {
+		"STATU": "E0001",	
+		"DESCR": "E0001: Pedido de compra não atribuído"
+	},{
+		"STATU": "E0002",
+		"DESCR": "E0002: Iem do pedido de compra não atribuído"
+	}, {
+		"STATU": "P1000",	
+		"DESCR": "P1000: Processo finalizado"
+	}]
+}

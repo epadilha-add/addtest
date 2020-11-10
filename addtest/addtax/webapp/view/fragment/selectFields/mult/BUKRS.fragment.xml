@@ -1,0 +1,7 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Label text="{i18n>BUKRS_text}" labelFor="BUKRS"/>
+	<MultiComboBox id="BUKRS" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" required="true"
+		items="{ path: 'PARAM>/VIEWS/0200', sorter: { path: 'BUKRS' } }" placeholder="{i18n>BUKRS_placeholder}" selectedKeys="{FILTERS>/BUKRS}">
+		<core:Item key="{PARAM>BUKRS}" text="{PARAM>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>

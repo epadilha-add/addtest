@@ -1,0 +1,105 @@
+{
+	"nodes": [
+		{
+			"id": "1",
+			"lane": "0",
+			"title": "Validação Geral",
+			"titleAbbreviation": "00100",
+			"children": [ 2 ],
+			"state": "Positive",
+			"stateText": "OK status",
+			"focused": true,
+			"texts": [
+				"Preenchimentos obrigatórios",
+				"Documentos existentes",
+				"Documentos liberados",
+				"Outros"
+			]
+		},
+		{
+			"id": "2",
+			"lane": "1",
+			"title": "Aprovação do Usuário",
+			"titleAbbreviation": "00200",
+			"children": [ 3 ],
+			"state": "Positive",
+			"stateText": "OK status",
+			"focused": true,
+			"texts":  [
+				"E-mail avisando o fornecedor"
+			]
+		},
+		{
+			"id": "3",
+			"lane": "2",
+			"title": "Invoice 2",
+			"titleAbbreviation": "AUTO",
+			"children": [ 4 ],
+			"state": "Positive",
+			"stateText": "OK status",
+			"focused": false,
+			"texts": null
+		},
+		{
+			"id": "4",
+			"lane": "3",
+			"title": "Validação Fiscal",
+			"titleAbbreviation": "IV 2",
+			"children": [ ],
+			"state": "Negative",
+			"stateText": "NÂO OK",
+			"focused": false,
+			"texts": null
+		}
+	],
+	"lanes": [
+		{
+			"id": "0",
+			"icon": "sap-icon://process",
+			"label": "Geral",
+			"position": 0
+		},
+		{
+			"id": "1",
+			"icon": "sap-icon://person-placeholder",
+			"label": "Aprovação",
+			"position": 1
+		},
+		{
+			"id": "2",
+			"icon": "sap-icon://process",
+			"label": "Email",
+			"position": 2
+		},
+		{
+			"id": "3",
+			"icon": "sap-icon://process",
+			"label": "Validação",
+			"position": 3
+		},
+		{
+			"id": "4",
+			"icon": "sap-icon://process",
+			"label": "MIGO",
+			"position": 4
+		},
+		{
+			"id": "5",
+			"icon": "sap-icon://person-placeholder",
+			"label": "Aprovação",
+			"position": 5
+		},
+		{
+			"id": "6",
+			"icon": "sap-icon://process",
+			"label": "MIRO",
+			"position": 6
+		},
+		{
+			"id": "7",
+			"icon": "sap-icon://pixelate",
+			"label": "Fim",
+			"position": 7
+		}
+	]
+}

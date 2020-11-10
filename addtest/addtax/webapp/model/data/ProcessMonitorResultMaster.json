@@ -1,0 +1,28 @@
+{
+
+	"Nodes": [{
+		"BUKRS": "0001",
+		"PROCX": "00010: Recebimento de Documentos",
+		"STATU": "E0001-Erro na validação fiscal",
+		"STATUT": "E",
+		"QUANT": "10"
+	}, {
+		"BUKRS": "0001",
+		"PROCX": "00035: Downlad XML",
+		"STATU": "P1000-Processo finalizado",
+		"STATUT": "S",
+		"QUANT": "10"
+	}, {
+		"BUKRS": "0001",
+		"PROCX": "01000: NF-e Mercantil",
+		"STATU": "P0000-Em Processo",
+		"STATUT": "I",
+		"QUANT": "10"
+	}, {
+		"BUKRS": "0002",
+		"PROCX": "02000: CT-e Conhecimento de Transporte",
+		"STATU": "P0000-Em Processo",
+		"STATUT": "I",
+		"QUANT": "10"
+	}]
+}

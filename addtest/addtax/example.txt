@@ -1,0 +1,437 @@
+///////////////////////////////////////////////////////////////////
+//
+// read html5 controls
+//
+///////////////////////////////////////////////////////////////////
+/******************************sap.m.List*************************/
+<List items="{ path: 'VARIA>/ALV' }">
+	<StandardListItem title="{VARIA>DESCR}" 
+	tooltip="{VARIA>VARIA}" 
+	type="Navigation" press=".handleActionPressPARAM"/>
+</List>
+readList: function (oEvent) {
+	var mPage = this.byId("IdPage");
+	mPage.setBusy(true);
+	
+	var oItem = oEvent.getParameter("listItem") || oEvent.getSource();
+	var varia = oItem.mAggregations.tooltip;
+}
+/******************************sap.m.ComboBox*********************/
+<ComboBox 
+	items="{ path: 'PROCX>/Nodes', sorter: { path: 'PROCX' } , formatter: '.fnFormatter' }" 
+	id="IdPROCX">
+	<core:Item key="{PROCX>PROCX}" text="{PROCX>DESCR}"/>
+</ComboBox>
+var procx = this.byId("IdPROCX");
+procx = procx.getSelectedKey();
+///////////////////////////////////////////////////////////////////
+//
+// soap client 
+//
+///////////////////////////////////////////////////////////////////
+var request = '<Envelop...>'
+
+var req = new XMLHttpRequest();
+req.open("POST", "http://172.22.0.21:8080/sap/bc/srt/wsdl/flv_10002A111AD0/bndg_url/addui5", true);
+req.withCredentials = true; 
+req.setRequestHeader("Authorization", this.authenticateUser("EPADILHA", "S1lkr0adoo"));
+req.setRequestHeader("Access-Control-Allow-Origin", "http://172.22.0.21");
+req.setRequestHeader("Content-Type",'text/xml; charset="utf-8"');
+req.send(request);
+// view request status
+jQuery.sap.log.error(req.status);
+jQuery.sap.log.error(req.responseText);
+				
+///////////////////////////////////////////////////////////////////
+//
+// select com base em outro select
+//
+///////////////////////////////////////////////////////////////////
+//controller
+onInit: function() {
+  var data = {
+            “country”: [
+            {
+                “name”: “AUSTRALIA”,
+                “projects”: [{
+                    “name”: “PONTING”
+                }, {
+                    “name”: “CLARKE”
+                }, {
+                    “name”: “MCGRATH”
+                }]
+            },
+            {
+                “name”: “INDIA”,
+                “projects”: [{
+                    “name”: “SACHIN”
+                }, {
+                    “name”: “KOHLI”
+                }, {
+                    “name”: “SEHWAG”
+                }]
+            }]
+        };
+
+        var oModel = new sap.ui.model.json.JSONModel();
+        oModel.setData(data);
+        sap.ui.getCore().setModel(oModel);
+        //set initial values for second dropdown box
+        var oModel2 = new sap.ui.model.json.JSONModel();
+        oModel2.setData(data.country[0]);
+        //using named data model binding for second dropdown box
+        this.byId(“players”).setModel(oModel2, “namedmodel”);
+},
+//event handler for first dropdown box selection change
+    onchange: function(oEvent) {
+        var bindingContext = oEvent.mParameters.selectedItem.getBindingContext();
+        var oModel = oEvent.getSource().getModel();
+        var countryData = oModel.getProperty(bindingContext.sPath);
+        var oModel = new sap.ui.model.json.JSONModel();
+        oModel.setData(countryData);
+        this.byId(“players”).setModel(oModel, “namedmodel”);
+}
+
+//view
+<dropdown:DropdownBox id=”country” items=”{/country}” change=”onchange”>
+    <dropdown:items>
+        <core:ListItem key=”{name}” text=”{name}” />
+    </dropdown:items>
+</dropdown:DropdownBox>
+<dropdown:DropdownBox id=”players” items=”{namedmodel>/projects}”>
+    <dropdown:items>
+        <core:ListItem key=”{namedmodel>name}” text=”{namedmodel>name}” />
+    </dropdown:items>
+</dropdown:DropdownBox>
+
+///////////////////////////////////////////////////////////////////
+//
+// search help
+//
+///////////////////////////////////////////////////////////////////
+var input1 = new sap.m.Input("input1", {
+	showValueHelp: true,
+	width: "100%",
+	valueHelpRequest: oController.onValueHelpRequest
+});
+
+onValueHelpRequest : function(evt){
+// create a Model with the data
+		var oModel1 = new sap.ui.model.odata.ODataModel("/sap/opu/odata/sap/ZDC_TEST_SRV/?sap-client=800");
+		sap.ui.getCore().setModel(oModel1);
+		var template1 = new sap.m.StandardListItem({
+		title: "{ZPernr}",
+		selected : true,
+	});
+	
+	var oselectDialog = new sap.m.SelectDialog("oselectDialog",
+	{
+		title : "Employee Number",
+		noDataText : "Employee not found",
+		growingThreshold : 20,
+		confirm : function(oEvent) {
+		var value = oEvent.getParameter("selectedItem").getTitle();
+		var oCore = sap.ui.getCore();
+		var oInput = oCore.byId("input1");
+		oInput.setValue(value);
+	}});
+	
+	oselectDialog.bindAggregation("items", {
+	path: "/employee",
+	template: template1
+	});
+	
+	oselectDialog.open();
+}
+///////////////////////////////////////////////////////////////////
+//
+// onNavBack com History SAP
+//
+///////////////////////////////////////////////////////////////////
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/core/routing/History"
+], function (Controller, History) {
+	"use strict";
+	return Controller.extend("sap.ui.demo.wt.controller.Detail", {
+		onInit: function () {
+			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
+		},
+		_onObjectMatched: function (oEvent) {
+			this.getView().bindElement({
+				path: "/" + oEvent.getParameter("arguments").invoicePath,
+				model: "invoice"
+			});
+		},
+		onNavBack: function () {
+			var oHistory = History.getInstance();
+			var sPreviousHash = oHistory.getPreviousHash();
+
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+				oRouter.navTo("overview", true);
+			}
+		}
+	});
+});
+///////////////////////////////////////////////////////////////////
+//
+// debug - index.html
+//
+///////////////////////////////////////////////////////////////////
+	data-sap-ui-logLevel = "debug"
+///////////////////////////////////////////////////////////////////
+//
+// espaço entre botões
+//
+///////////////////////////////////////////////////////////////////
+<ToolbarSpacer/>
+
+///////////////////////////////////////////////////////////////////
+//
+// obtar dados do sistema SAP: usuário, ambinte, etc
+//
+///////////////////////////////////////////////////////////////////
+sap.ui.require([ 
+	'sap/ushell_abap/bootstrap/abap'
+], function () {
+	var sysinfo = window["sap-ushell-config"].services.Container.adapter.config;
+	console.log(sysinfo.id);
+});
+///////////////////////////////////////////////////////////////////
+//
+// exportar para Excel
+//
+///////////////////////////////////////////////////////////////////
+https://sapui5.hana.ondemand.com/1.60.1/#/sample/sap.ui.export.sample.table/code/Spreadsheet.controller.js
+
+onExport: function() {
+	var aCols, oRowBinding, oSettings, oTable;
+	
+	if (!this._oTable) {
+		this._oTable = this.byId("exportTable");
+	}
+	
+	oTable = this._oTable;
+	oRowBinding = oTable.getBinding("items");
+	
+	aCols = this.createColumnConfig();
+	
+	var oModel = oRowBinding.getModel();
+	var oModelInterface = oModel.getInterface();
+	
+	oSettings = {
+		workbook: {
+			columns: aCols,
+			hierarchyLevel: 'Level'
+		},
+		dataSource: {
+			type: "oData",
+			dataUrl: oRowBinding.getDownloadUrl ? oRowBinding.getDownloadUrl() : null,
+			serviceUrl: oModelInterface.sServiceUrl,
+			headers: oModelInterface.getHeaders ? oModelInterface.getHeaders() : null,
+			count: oRowBinding.getLength ? oRowBinding.getLength() : null,
+			useBatch: oModelInterface.bUseBatch,
+			sizeLimit: oModelInterface.iSizeLimit
+		},
+		worker: false // We need to disable worker because we are using a MockServer as OData Service
+	};
+	
+	new Spreadsheet(oSettings).build();	
+}
+///////////////////////////////////////////////////////////////////
+//
+// adicionando botões SimpleForm
+//
+///////////////////////////////////////////////////////////////////
+	var content = new sap.ui.layout.form.SimpleForm({
+	
+		content: [
+
+			new sap.m.Label({
+				text: "Nº da Nota fiscal"
+
+			}), new sap.m.MultiInput({
+
+				id: "NFENUM",
+				placeholder: "{i18n>NFENUM_placeholder}"
+
+			})
+		]
+	});
+
+	var sec = this.byId("A");
+	MessageToast.show(sec);
+	sec.addBlock(content);
+
+///////////////////////////////////////////////////////////////////
+//
+// adicionando botões OverflowToolbar
+//
+///////////////////////////////////////////////////////////////////
+var oWorkExample = new sap.m.OverflowToolbar("addtoolbar", {
+	width: "auto",
+	content: [
+		new sap.m.Button({
+			type: "Transparent",
+			icon: "sap-icon://pending",
+			text: "Executar processo"
+		},{
+			type: "Transparent",
+			icon: "sap-icon://pending",
+			text: "Executar processo"
+		})
+	]
+});
+
+var tab = this.byId("table");
+tab.addExtension(oWorkExample);
+			
+///////////////////////////////////////////////////////////////////
+//
+// bind from JSON - START
+//
+///////////////////////////////////////////////////////////////////
+JS
+
+var vMenu = {
+	"NODES": [{
+			"UCOMM": "PROC",
+			"DESCR": "Executar processo"
+		}, {
+			"UCOMM": "PROC",
+			"DESCR": "Anular processo"
+		}
+	]};
+this.getView().setModel(new JSONModel(vMenu),"MENU");
+			
+VIEW
+
+<ComboBox id="idComboBox" showSecondaryValues="true" items="{ path: 'MENU>/NODES', sorter: { path: 'UCOMM' } }">
+	<core:ListItem key="{MENU>UCOMM}" text="{MENU>DESCR}"/>
+</ComboBox>
+///////////////////////////////////////////////////////////////////
+//
+// fragment - START
+//
+///////////////////////////////////////////////////////////////////		
+FRAGMENT (name.fragment.xml)
+<Label text="{i18n>BRANCH_text}" labelFor="BRANCH"/>
+	<MultiComboBox id="BRANCH" selectionChange="handleSelectionChange" selectionFinish="handleSelectionFinish" 
+	placeholder="{i18n>BRANCH_placeholder}" items="{ path: 'BRANCH>/Nodes', sorter: { path: 'BRANCH' } }">
+	<core:Item key="{BRANCH>BRANCH}" text="{BRANCH>DESCR}"/>
+	</MultiComboBox>
+</core:FragmentDefinition>
+
+VIEW
+<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.BRANCH" type="XML"/>
+///////////////////////////////////////////////////////////////////
+//
+// iterate arquivo json
+//
+///////////////////////////////////////////////////////////////////
+https://sapui5.hana.ondemand.com/1.60.1/#/sample/sap.ui.table.sample.RowHighlights/code/Controller.controller.js
+
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/ui/model/json/JSONModel",
+	"sap/ui/table/RowSettings"
+], function(Controller, JSONModel, RowSettings) {
+	"use strict";
+
+	return Controller.extend("sap.ui.table.sample.RowHighlights.Controller", {
+
+		onInit: function() {
+			// set explored app's demo model on this sample
+			var oJSONModel = this.initSampleDataModel();
+			this.getView().setModel(oJSONModel);
+		},
+
+		initSampleDataModel: function() {
+			var oModel = new JSONModel();
+
+			jQuery.ajax(sap.ui.require.toUrl("sap/ui/demo/mock") + "/products.json", {
+				dataType: "json",
+				success: function(oData) {
+					for (var i = 0; i < oData.Process.length; i++) {
+						var oProduct = oData.Process[i];
+
+						if (i === 0) {
+							oProduct.Status = "Success";
+						} else if (i === 1) {
+							oProduct.Status = "Warning";
+						} else if (i === 2) {
+							oProduct.Status = "Error";
+						} else if (i === 3) {
+							oProduct.Status = "Information";
+						} else if (i === 4) {
+							oProduct.Status = "None";
+						} else if (oProduct.Price < 300) {
+							oProduct.Status = "Success";
+						} else if (oProduct.Price < 600) {
+							oProduct.Status = "Warning";
+						} else if (oProduct.Price < 900) {
+							oProduct.Status = "Error";
+						} else if (oProduct.Price < 1200) {
+							oProduct.Status = "Information";
+						} else {
+							oProduct.Status = "None";
+						}
+					}
+					oModel.setData(oData);
+				},
+				error: function() {
+					jQuery.sap.log.error("failed to load json");
+				}
+			});
+
+			return oModel;
+		},
+
+		onHighlightToggle: function(oEvent) {
+			var oTable = this.byId("table");
+			var oToggleButton = oEvent.getSource();
+
+			if (oToggleButton.getPressed()) {
+				oTable.setRowSettingsTemplate(new RowSettings({
+					highlight: "{Status}"
+				}));
+			} else {
+				oTable.setRowSettingsTemplate(null);
+			}
+		},
+
+		onAlternateToggle: function(oEvent) {
+			this.byId("table").setAlternateRowColors(oEvent.getParameter("pressed"));
+		},
+
+		onSelectionModeChange: function(oEvent) {
+			var oTable = this.byId("table");
+			var sKey = oEvent.getParameter("selectedItem").getKey();
+
+			oTable.setSelectionMode(sKey);
+		}
+	});
+});
+
+///////////////////////////////////////////////////////////////////
+//
+// get model
+//
+///////////////////////////////////////////////////////////////////
+//the same view
+this.getView().getModel("modelName");
+//another view
+sap.ui.getCore().getModel("modelName");
+//property
+var options = this.getView().getModel("containerChecks").getProperty("options");
+
+///////////////////////////////////////////////////////////////////
+//
+// condition from model value
+//
+///////////////////////////////////////////////////////////////////
+<Button visible="{= ${model>field} === 0 ? true : false }" />

@@ -1,0 +1,16 @@
+---
+applications:
+
+- name: add-platform-ui5
+  memory: ((memory))
+  disk_quota: ((disk_quota))
+  instances: ((instances))
+  routes:
+    - route: add-addtax-ui5-((subaccount)).cfapps.us10.hana.ondemand.com
+  buildpacks:
+      - nodejs_buildpack
+  services:
+    - add-connectivity-srv
+    - add-destination-srv
+    - add-logging-srv
+    - add-xsuaa-srv

@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.BUKRS" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.PROCX" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.DTPRC" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.BRANCH" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.USMOD" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.STATU" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.mult.INDIC" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.single.PFNSH" type="XML"/>
+	<core:Fragment fragmentName="AddPlatform.view.fragment.selectFields.single.PSTOP" type="XML"/>
+</core:FragmentDefinition>
